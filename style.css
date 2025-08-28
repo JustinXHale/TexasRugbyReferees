@@ -1,130 +1,25 @@
-/* ============================================================
-   Texas Rugby Referees — Global Styles
-   - Tweak brand colors in :root
-   - No JS required; mobile menu uses CSS only
-   ============================================================ */
-:root {
-  /* ====== BRAND COLORS (EDIT HERE) ====== */
-  --bg: #f8fafc;      /* page background */
-  --primary: #0f172a; /* headings, nav text */
-  --accent: #2563eb;  /* link hover, accents */
-  --text: #1e293b;    /* body text */
-  --muted: #64748b;   /* secondary text */
-
-  /* ====== LAYOUT (safe to leave alone) ====== */
-  --maxw: 1100px;
-  --pad: 16px;
+/* ===== TRRA minimal styles (Phase 1 reset) ===== */
+:root{
+  --bg:#f8fafc; --text:#1e293b; --primary:#0f172a; --muted:#64748b;
+  --maxw:1100px; --pad:16px;
 }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;background:var(--bg);color:var(--text)}
 
-/* ====== BASE RESET ====== */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height: 1.6;
-  color: var(--text);
-  background: var(--bg);
-}
+/* Header */
+.site-header{padding:20px var(--pad) 8px;text-align:center}
+.site-title{margin:0;font-weight:800;color:var(--primary);font-size:clamp(1.4rem,2vw+1rem,2.2rem)}
+.site-subtitle{margin:4px 0 0;color:var(--muted);font-size:.95rem}
 
-/* ============================================================
-   HEADER: Title + Subtitle + Navigation
-   ============================================================ */
-.site-header { padding: 18px var(--pad) 10px; text-align: center; }
-.site-title  { margin: 0; font-size: clamp(1.4rem, 2vw + 1rem, 2.2rem); color: var(--primary); font-weight: 800; letter-spacing: 0.2px; }
-.site-subtitle { margin: 4px 0 0; color: var(--muted); font-size: .95rem; }
+/* Desktop nav */
+.nav-desktop{margin-top:10px}
+.nav-desktop .menu{list-style:none;display:flex;gap:12px;justify-content:center;padding:0;margin:0;flex-wrap:wrap}
+.nav-desktop a{display:inline-block;padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--primary);font-weight:600}
+.nav-desktop a:hover{background:rgba(15,23,42,.08)}
 
-/* ====== NAV (desktop) ====== */
-.main-nav { margin-top: 10px; position: relative; }
-.menu {
-  list-style: none; display: flex; gap: 10px; justify-content: center;
-  padding: 0; margin: 0; flex-wrap: wrap;
-}
-.menu-item > a,
-.menu-item > details > summary {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 12px; border-radius: 10px; text-decoration: none;
-  color: var(--primary); font-weight: 600; cursor: pointer;
-}
-.menu-item > a:hover,
-.menu-item > details > summary:hover { background: rgba(37, 99, 235, .08); }
-
-/* ====== DROPDOWNS (desktop) — built with <details> for simplicity ====== */
-.menu-item details { position: relative; }
-.menu-item details[open] > summary { background: rgba(37,99,235,.08); }
-.menu-item details > summary::-webkit-details-marker { display: none; }
-.menu-item details > summary::after { content: "▾"; font-size: .9rem; transform: translateY(-1px); }
-
-.submenu {
-  position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
-  min-width: 220px; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08); padding: 8px; display: grid; gap: 4px; z-index: 10;
-}
-.submenu a { display: block; padding: 10px 12px; border-radius: 8px; color: var(--text); text-decoration: none; white-space: nowrap; }
-.submenu a:hover { background: #f1f5f9; color: var(--primary); }
-
-/* Keep dropdown within viewport on small screens */
-@media (max-width: 640px) {
-  .submenu { left: 0; right: 0; transform: none; margin: 0 auto; max-width: 92vw; }
-}
-
-/* ============================================================
-   MOBILE NAV: Hamburger + Drawer (CSS-only)
-   ============================================================ */
-.desktop-only { display: flex; }
-.mobile-only  { display: none; }
-
-.hamburger {
-  display: none; position: fixed; right: var(--pad); top: 18px; z-index:1000;
-  width: 36px; height: 28px; align-items: center; justify-content: center;
-  gap: 5px; cursor: pointer; border-radius: 10px; padding: 6px;
-}
-.hamburger:hover { background: rgba(37,99,235,.08); }
-.hamburger span { display: block; width: 22px; height: 2px; background: var(--primary); border-radius: 2px; }
-
-/* Drawer container */
-.drawer {
-  display: none;
-  position: relative; margin-top: 10px; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.06); padding: 8px;
-}
-.drawer a, .drawer summary { display: block; padding: 10px 12px; border-radius: 8px; color: var(--text); text-decoration: none; }
-.drawer a:hover, .drawer summary:hover { background: #f1f5f9; }
-.drawer details { padding: 4px; }
-.drawer details > summary { font-weight: 700; cursor: pointer; }
-
-/* Toggle checked → show drawer + animate hamburger */
-#nav-toggle:checked ~ .drawer { display: block; }
-#nav-toggle:checked + .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-#nav-toggle:checked + .hamburger span:nth-child(2) { opacity: 0; }
-#nav-toggle:checked + .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* Mobile breakpoint */
-@media (max-width: 900px) {       
-  .desktop-only { display: none; }
-  .mobile-only  { display: block; }
-  .hamburger    { display: inline-flex; }
-  .site-header  { padding-top: 56px; }
-}
-
-/* ============================================================
-   CONTENT WRAPPERS
-   ============================================================ */
-main { max-width: var(--maxw); margin: 0 auto; padding: 28px var(--pad); }
-.card {
-  background: #fff; border: 1px solid #e5e7eb; border-radius: 14px;
-  box-shadow: 0 1px 4px rgba(0,0,0,.06); padding: 18px; margin: 16px 0;
-}
-h1, h2, h3 { color: var(--primary); margin: 0 0 8px; }
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-.site-footer { border-top: 1px solid #e5e7eb; margin-top: 24px; padding: 18px var(--pad); }
-.footer-inner {
-  max-width: var(--maxw); margin: 0 auto; display: flex; flex-wrap: wrap;
-  align-items: center; justify-content: center; gap: 14px; color: var(--muted);
-}
-.footer-inner a { color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 8px; }
-.footer-inner a:hover { background: rgba(15,23,42,.05); color: var(--primary); }
-.icon { width: 18px; height: 18px; display: inline-block; }
-.muted { color: var(--muted); }
+/* Mobile nav (native <details>) */
+.nav-mobile{display:none;margin:10px auto 0;max-width:min(94vw,600px);text-align:left}
+.nav-mobile summary{cursor:pointer;list-style:none;padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;font-weight:700;color:var(--primary)}
+.nav-mobile[open] summary{background:#eef2ff}
+.nav-mobile .drawer{margin-top:8px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;box-shadow:0 10px 30px rgba(0,0,
