@@ -1,0 +1,28 @@
+<!-- _layouts/default.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/style.css?v=jekyll1" />
+</head>
+<body>
+  <!-- nav include -->
+  {% include nav.html %}
+
+  <!-- header (per-page can override or omit) -->
+  <header class="site-header">
+    <h1 class="site-title">{{ site.title }}</h1>
+    <p class="site-subtitle">{{ site.description }}</p>
+  </header>
+
+  <!-- page content -->
+  <main>
+    {{ content }}
+  </main>
+
+  <!-- footer include -->
+  {% include footer.html %}
+</body>
+</html>
