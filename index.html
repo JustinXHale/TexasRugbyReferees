@@ -8,43 +8,38 @@
 </head>
 <body>
 
-  <!-- ===== Inject nav here ===== -->
-  <div id="nav-placeholder"></div>
-  <script>
-    // Figure out the repo base path, e.g. "/TexasRugbyReferees/"
-    (function () {
-      const parts = window.location.pathname.split('/').filter(Boolean);
-      // project pages look like "/<user>/<repo>/..." or just "/<repo>/..."
-      // Our base is always "/<repo>/"
-      const repo = parts[0]; // "TexasRugbyReferees"
-      const base = '/' + repo + '/';
+ <!-- ===== Inject nav here ===== -->
+<div id="nav-placeholder"></div>
+<script>
+  (function () {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const repo = parts[0];                // "TexasRugbyReferees"
+    const base = '/' + repo + '/';
 
-      // 1) Fetch nav.html from the correct base
-      fetch(base + 'nav.html')
-        .then(res => res.text())
-        .then(html => {
-          const holder = document.getElementById('nav-placeholder');
-          holder.innerHTML = html;
+    fetch(base + 'nav.html')
+      .then(res => res.text())
+      .then(html => {
+        const holder = document.getElementById('nav-placeholder');
+        holder.innerHTML = html;
 
-          // 2) Rewrite any nav links that start with "/" to "/<repo>/..."
-          holder.querySelectorAll('a[href^="/"]').forEach(a => {
-            a.setAttribute('href', base + a.getAttribute('href').replace(/^\//, ''));
-          });
-
-          // 3) Wire up close behaviors
-          const navToggle = document.getElementById('nav-toggle');
-          holder.querySelectorAll('.drawer a').forEach(a => {
-            a.addEventListener('click', () => { navToggle.checked = false; });
-          });
-          holder.querySelector('.overlay').addEventListener('click', () => {
-            navToggle.checked = false;
-          });
-        })
-        .catch(err => {
-          console.error('Failed to load nav:', err);
+        // Rewrite any absolute links (/about/...) to include /<repo>/ prefix
+        holder.querySelectorAll('a[href^="/"]').forEach(a => {
+          a.setAttribute('href', base + a.getAttribute('href').replace(/^\//, ''));
         });
-    })();
-  </script>
+
+        // Close drawer on link or overlay click
+        const navToggle = document.getElementById('nav-toggle');
+        holder.querySelectorAll('.drawer a').forEach(a => {
+          a.addEventListener('click', () => { navToggle.checked = false; });
+        });
+        holder.querySelector('.overlay').addEventListener('click', () => {
+          navToggle.checked = false;
+        });
+      })
+      .catch(err => console.error('Failed to load nav:', err));
+  })();
+</script>
+
 
   <!-- Header (brand) -->
   <header class="site-header">
