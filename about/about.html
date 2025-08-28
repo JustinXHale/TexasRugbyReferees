@@ -1,125 +1,31 @@
+---
+layout: default
+title: About TRRA
+permalink: /about/about.html
+---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About TRRA • Texas Rugby Referees</title>
-  <!-- one global stylesheet in the repo root -->
-  <link rel="stylesheet" href="../style.css?v=about1" />
-</head>
-<body>
+## Mission
+The Texas Rugby Referee Association (TRRA) recruits, trains, coaches, assigns, and supports
+match officials across Texas. We develop referees at every level, promote safety and game
+management grounded in World Rugby Laws, and help raise the standard of rugby in our region.
 
-  <!-- ===== Inject shared hamburger nav ===== -->
-  <div id="nav-placeholder"></div>
-  <script>
-    (function () {
-      const parts = window.location.pathname.split('/').filter(Boolean);
-      const repo = parts[0];                    // "TexasRugbyReferees"
-      const base = '/' + repo + '/';            // "/TexasRugbyReferees/"
+## What We Do
+- **Education & Certification** — Support USA Rugby pathways for accreditation and compliance.
+- **Appointments** — Assign referees and ARs for league, collegiate, club, and tournaments statewide.
+- **Coaching & Feedback** — On-field coaching, evaluations, and development plans.
+- **Community** — Supportive culture for officials; collaboration with competitions and clubs.
 
-      fetch(base + 'nav.html')
-        .then(res => res.text())
-        .then(html => {
-          const holder = document.getElementById('nav-placeholder');
-          holder.innerHTML = html;
+## Governance & Partnerships
+- **Bylaws** — Define membership, elections, and operations (approved 2014).
+- **Texas Rugby Union (TRU)** — TRRA works alongside TRU, which oversees adult rugby in the region.
+- **USA Rugby** — Accreditation, SafeSport, background checks, and Law guidance align with USA Rugby.
 
-          // Rewrite nav links that start with "/" → "/<repo>/..."
-          holder.querySelectorAll('a[href^="/"]').forEach(a => {
-            a.setAttribute('href', base + a.getAttribute('href').replace(/^\//, ''));
-          });
+[View TRRA Bylaws (PDF)](https://texasrugbyunion.com/wp-content/uploads/2014/06/TRRABylaws-WorkingDraft1.pdf){:target="_blank" rel="noopener"}
 
-          // Close drawer on link or overlay click
-          const navToggle = document.getElementById('nav-toggle');
-          holder.querySelectorAll('.drawer a').forEach(a => {
-            a.addEventListener('click', () => { navToggle.checked = false; });
-          });
-          holder.querySelector('.overlay').addEventListener('click', () => {
-            navToggle.checked = false;
-          });
-        });
-    })();
-  </script>
+## Coverage
+TRRA supports community, collegiate, and club rugby throughout Texas. Assignments span regular
+season fixtures, playoffs, and tournaments.
 
-  <!-- ===== Page header ===== -->
-  <header class="site-header">
-    <h1 class="site-title">About the Texas Rugby Referee Association</h1>
-    <p class="site-subtitle">Who we are • What we do • How to get involved</p>
-  </header>
-
-  <!-- ===== Main content ===== -->
-  <main>
-    <!-- Mission / Purpose -->
-    <section class="card" id="about-trra">
-      <h2>Mission</h2>
-      <p>
-        The Texas Rugby Referee Association (TRRA) recruits, trains, coaches, assigns, and supports
-        match officials across Texas. We develop referees at every level, promote safety and game
-        management grounded in World Rugby Laws, and help raise the standard of rugby in our region.
-      </p>
-    </section>
-
-    <!-- What we do -->
-    <section class="card">
-      <h2>What We Do</h2>
-      <ul>
-        <li><strong>Education &amp; Certification:</strong> Support USA Rugby pathways for accreditation, compliance, and ongoing development.</li>
-        <li><strong>Appointments:</strong> Assign referees and assistant referees for league, collegiate, club, and tournament play statewide.</li>
-        <li><strong>Coaching &amp; Feedback:</strong> Provide on-field coaching, evaluations, and development plans.</li>
-        <li><strong>Community:</strong> Foster a supportive culture for officials and collaborate with competitions and clubs.</li>
-      </ul>
-    </section>
-
-    <!-- Governance / Relationships -->
-    <section class="card" id="governance">
-      <h2>Governance &amp; Partnerships</h2>
-      <ul>
-        <li><strong>Bylaws:</strong> The TRRA Bylaws (approved 2014) define membership, elections, and operations.</li>
-        <li><strong>Texas Rugby Union (TRU):</strong> TRRA works alongside the TRU, which oversees adult rugby in the region and sets related policies.</li>
-        <li><strong>USA Rugby:</strong> Referee accreditation, SafeSport, background checks, and Law guidance align with USA Rugby and World Rugby.</li>
-      </ul>
-      <p>
-        <a class="muted" href="https://texasrugbyunion.com/wp-content/uploads/2014/06/TRRABylaws-WorkingDraft1.pdf" target="_blank" rel="noopener">View TRRA Bylaws (PDF)</a>
-      </p>
-    </section>
-
-    <!-- Our footprint -->
-    <section class="card" id="footprint">
-      <h2>Coverage</h2>
-      <p>
-        TRRA supports community, collegiate, and club rugby throughout Texas (and, when requested,
-        nearby competitions). Assignments span regular season fixtures, playoffs, and tournaments.
-      </p>
-    </section>
-
-    <!-- Get involved -->
-    <section class="card" id="get-involved">
-      <h2>Get Involved</h2>
-      <p>
-        New to refereeing or returning to the whistle? Start with USA Rugby registration and required
-        certifications, then connect with TRRA for local mentoring, coaching, and appointments.
-      </p>
-      <ul>
-        <li><a href="https://usa.rugby/referee-and-officials" target="_blank" rel="noopener">USA Rugby — Referees &amp; Officials</a></li>
-        <li><a href="../forms/request-referee.html">Request a Referee (for Teams)</a></li>
-        <li><a href="../about/contact.html">Contact TRRA</a></li>
-      </ul>
-    </section>
-
-  </main>
-
-  <!-- ===== Footer ===== -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
-      <a href="../about/contact.html">Contact</a>
-      <span class="muted">© <span id="y"></span> Texas Rugby Referees</span>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+## History & Milestones
+- **2014:** TRRA Bylaws approved by membership, formalizing governance and operations.
+- **Ongoing:** Referee education & law updates coordinated with TRU and USA Rugby.
