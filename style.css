@@ -1,7 +1,5 @@
 /* ============================================================
    TRRA Styles — Mobile-first Hamburger Sidebar (same on all screens)
-   - Edit brand colors in :root
-   - No frameworks; tiny JS only to close the drawer on link click
    ============================================================ */
 
 /* ---------------- Brand + layout tokens (EDIT HERE) ---------------- */
@@ -26,7 +24,7 @@ body{
 }
 
 /* ============================================================
-   TOP BAR: brand centered + hamburger button
+   TOP BAR: brand centered + hamburger
    ============================================================ */
 .site-header{
   position: sticky; top:0; z-index:1000;
@@ -46,21 +44,32 @@ body{
   position: fixed; left: var(--pad); top: 14px; z-index:1100;
   width:40px; height:34px; display:inline-flex; align-items:center; justify-content:center;
   border-radius:10px; cursor:pointer; user-select:none;
+  transition: background .2s ease;
 }
 .hambutton:hover{ background:rgba(15,23,42,.06) }
 .hambutton span{
   display:block; width:22px; height:2px; background:var(--primary); border-radius:2px;
-  position:relative;
+  position:relative; transition: transform .2s ease, background .2s ease;
 }
 .hambutton span::before,
 .hambutton span::after{
-  content:""; position:absolute; left:0; width:22px; height:2px; background:var(--primary); border-radius:2px;
+  content:""; position:absolute; left:0; width:22px; height:2px; background:var(--primary);
+  border-radius:2px; transition: transform .2s ease, top .2s ease, opacity .2s ease;
 }
 .hambutton span::before{ top:-7px }
 .hambutton span::after { top: 7px }
 
 /* Hide the real checkbox; we’ll toggle it with the label */
 #nav-toggle{ position:absolute; opacity:0; pointer-events:none }
+
+/* Animate to an “X” when open */
+#nav-toggle:checked + .hambutton span{ background:transparent }
+#nav-toggle:checked + .hambutton span::before{
+  top:0; transform:rotate(45deg);
+}
+#nav-toggle:checked + .hambutton span::after{
+  top:0; transform:rotate(-45deg);
+}
 
 /* ============================================================
    SIDEBAR DRAWER + OVERLAY
@@ -70,29 +79,31 @@ body{
   opacity:0; pointer-events:none; transition:opacity .2s ease;
   z-index:1050;
 }
-/* Clicking overlay closes the drawer (it's a label for #nav-toggle) */
-.overlay.label { display:block }
-
-/* Drawer panel */
 .drawer{
   position: fixed; inset:0 auto 0 0; /* left side */
   width: clamp(260px, 80vw, 360px);
-  background:#fff; border-right:1px solid #e5e7eb; border-radius:0 var(--radius) var(--radius) 0;
+  background:#fff; border-right:1px solid #e5e7eb;
+  border-radius:0 var(--radius) var(--radius) 0;
   transform: translateX(-100%); transition: transform .25s ease;
-  z-index:1060; padding:12px;
+  z-index:1060;
+  padding:60px 12px 12px;   /* top padding so content sits below hamburger */
   box-shadow: 0 10px 30px rgba(0,0,0,.12);
 }
 
 /* Drawer content */
 .drawer .drawer-title{
-  margin:6px 8px 12px; font-weight:800; color:var(--primary);
+  margin:0 0 12px;
+  font-weight:800; color:var(--primary); font-size:1.2rem;
+  padding:0 4px;
 }
 .drawer .menu{ list-style:none; margin:0; padding:0; display:grid; gap:6px }
+.drawer .section{
+  margin:10px 4px 4px; font-weight:700; color:var(--muted); font-size:.9rem;
+}
 .drawer a{
   display:block; padding:12px; border-radius:10px; text-decoration:none; color:var(--text);
 }
 .drawer a:hover{ background:#f1f5f9; color:var(--primary) }
-.drawer .section{ margin:10px 8px 4px; font-weight:700; color:var(--muted); font-size:.9rem }
 
 /* Toggle ON: show overlay + slide drawer */
 #nav-toggle:checked ~ .overlay{ opacity:1; pointer-events:auto }
