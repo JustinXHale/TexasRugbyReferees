@@ -4,50 +4,49 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Texas Rugby Referees</title>
-  <link rel="stylesheet" href="style.css?v=include-fix1" />
+  <link rel="stylesheet" href="style.css?v=include-footer1" />
 </head>
 <body>
 
- <!-- ===== Inject nav here ===== -->
-<div id="nav-placeholder"></div>
-<script>
-  (function () {
-    const parts = window.location.pathname.split('/').filter(Boolean);
-    const repo = parts[0];                // "TexasRugbyReferees"
-    const base = '/' + repo + '/';
+  <!-- ===== NAV INCLUDE ===== -->
+  <div id="nav-placeholder"></div>
+  <script>
+    (function () {
+      const parts = window.location.pathname.split('/').filter(Boolean);
+      const repo  = parts[0] || '';            // e.g. "TexasRugbyReferees"
+      const base  = repo ? '/' + repo + '/' : '/';
 
-    fetch(base + 'nav.html')
-      .then(res => res.text())
-      .then(html => {
-        const holder = document.getElementById('nav-placeholder');
-        holder.innerHTML = html;
+      fetch(base + 'nav.html')
+        .then(res => res.text())
+        .then(html => {
+          const holder = document.getElementById('nav-placeholder');
+          holder.innerHTML = html;
 
-        // Rewrite any absolute links (/about/...) to include /<repo>/ prefix
-        holder.querySelectorAll('a[href^="/"]').forEach(a => {
-          a.setAttribute('href', base + a.getAttribute('href').replace(/^\//, ''));
-        });
+          // Rewrite any absolute links (/about/...) to include /<repo>/...
+          holder.querySelectorAll('a[href^="/"]').forEach(a => {
+            a.setAttribute('href', base + a.getAttribute('href').replace(/^\//, ''));
+          });
 
-        // Close drawer on link or overlay click
-        const navToggle = document.getElementById('nav-toggle');
-        holder.querySelectorAll('.drawer a').forEach(a => {
-          a.addEventListener('click', () => { navToggle.checked = false; });
-        });
-        holder.querySelector('.overlay').addEventListener('click', () => {
-          navToggle.checked = false;
-        });
-      })
-      .catch(err => console.error('Failed to load nav:', err));
-  })();
-</script>
+          // Close drawer on link or overlay click
+          const navToggle = document.getElementById('nav-toggle');
+          holder.querySelectorAll('.drawer a').forEach(a => {
+            a.addEventListener('click', () => { navToggle.checked = false; });
+          });
+          holder.querySelector('.overlay').addEventListener('click', () => {
+            navToggle.checked = false;
+          });
+        })
+        .catch(err => console.error('Failed to load nav:', err));
+    })();
+  </script>
 
-
-  <!-- Header (brand) -->
+  <!-- ===== PAGE HEADER ===== -->
   <header class="site-header">
     <h1 class="site-title">Texas Rugby Referees</h1>
     <p class="site-subtitle">Assigning • Development • Community</p>
   </header>
 
-  <!-- Main content -->
+  <!-- ===== MAIN CONTENT ===== -->
   <main>
     <div class="card">
       <h2>Welcome</h2>
@@ -64,18 +63,31 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
-      <a href="about/contact.html">Contact</a>
-      <span class="muted">© <span id="y"></span> Texas Rugby Referees</span>
-    </div>
-  </footer>
-
+  <!-- ===== FOOTER INCLUDE ===== -->
+  <div id="footer-placeholder"></div>
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      const parts = window.location.pathname.split('/').filter(Boolean);
+      const repo  = parts[0] || '';
+      const base  = repo ? '/' + repo + '/' : '/';
+
+      fetch(base + 'footer.html')
+        .then(res => res.text())
+        .then(html => {
+          const fp = document.getElementById('footer-placeholder');
+          fp.innerHTML = html;
+
+          // Rewrite absolute links in footer as well
+          fp.querySelectorAll('a[href^="/"]').forEach(a => {
+            a.setAttribute('href', base + a.getAttribute('href').replace(/^\//, ''));
+          });
+
+          // Set the year
+          const y = fp.querySelector('#y');
+          if (y) y.textContent = new Date().getFullYear();
+        })
+        .catch(err => console.error('Failed to load footer:', err));
+    })();
   </script>
 </body>
 </html>
