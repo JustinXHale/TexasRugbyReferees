@@ -1,33 +1,48 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contact • Referee Group</title>
-<link rel="stylesheet" href="style.css" />
-<header>
-  <nav>
-    <strong>Referee Group</strong>
-    <a href="./">Home</a>
-    <a href="assignments.html">Assignments</a>
-    <a class="active" href="contact.html">Contact</a>
-    <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
-    <a href="https://x.com/yourhandle" target="_blank">X/Twitter</a>
-  </nav>
-</header>
-<main>
-  <h1>Contact</h1>
-  <div class="card">
-    <h3>Email</h3>
-    <p><a href="mailto:assignor@example.com">assignor@example.com</a></p>
-    <p><a href="mailto:info@example.com">info@example.com</a></p>
-  </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact • Texas Rugby Referees</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ====== HEADER (copy from index.html) ====== -->
+  <!-- BEGIN HEADER -->
+  <header class="site-header">
+    <h1 class="site-title">Texas Rugby Referees</h1>
+    <p class="site-subtitle">Assigning • Development • Community</p>
+    <!-- >>> COPY NAV FROM index.html HERE <<< -->
+  </header>
+  <!-- END HEADER -->
 
-  <div class="card">
-    <h3>Request a Referee</h3>
-    <p>Use this Google Form:</p>
-    <p><a target="_blank" href="https://forms.gle/your-form-id">Match Request Form</a></p>
-  </div>
-</main>
-<footer>© <span id="y"></span> Referee Group</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <main>
+    <h1>Contact</h1>
+
+    <div class="card">
+      <h3>Email</h3>
+      <!-- ====== EDIT EMAILS HERE ====== -->
+      <p><a href="mailto:assignor@example.com">assignor@example.com</a></p>
+      <p><a href="mailto:info@example.com">info@example.com</a></p>
+    </div>
+
+    <div class="card">
+      <h3>Request a Referee</h3>
+      <!-- ====== PASTE YOUR GOOGLE FORM LINK ====== -->
+      <p>Use this Google Form: <a target="_blank" rel="noopener" href="form-request-referee.html">Match Request Form</a></p>
+    </div>
+  </main>
+
+  <!-- ====== FOOTER (copy from index.html) ====== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
+      <a href="join-whatsapp.html">WhatsApp</a>
+      <a href="contact.html">Contact</a>
+      <span class="muted">© <span id="y"></span> Texas Rugby Referees</span>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
 </html>
