@@ -6,33 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Texas Rugby Referees</title>
 
-  <!-- ===== CSS (add ?v=reset1 to bust cache) ===== -->
-  <link rel="stylesheet" href="style.css?v=reset1" />
+  <!-- ===== CSS (cache-busted) ===== -->
+  <link rel="stylesheet" href="style.css?v=sidebar1" />
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
+  <!-- ===== NAV TOGGLE (hidden checkbox) ===== -->
+  <input id="nav-toggle" type="checkbox" hidden>
+
+  <!-- ===== HAMBURGER BUTTON (label toggles checkbox) ===== -->
+  <label for="nav-toggle" class="hambutton" aria-label="Open menu">
+    <span></span>
+  </label>
+
+  <!-- ===== HEADER: brand centered ===== -->
   <header class="site-header">
     <h1 class="site-title">Texas Rugby Referees</h1>
     <p class="site-subtitle">Assigning • Development • Community</p>
-
-    <!-- Desktop nav -->
-    <nav class="nav-desktop" aria-label="Primary">
-      <ul class="menu">
-        <li><a href="schedule.html">Matches</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- Mobile nav -->
-    <details class="nav-mobile" aria-label="Mobile menu">
-      <summary>Menu</summary>
-      <div class="drawer">
-        <a href="schedule.html">Matches</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </details>
   </header>
+
+  <!-- ===== OVERLAY (click to close) ===== -->
+  <label for="nav-toggle" class="overlay" aria-hidden="true"></label>
+
+  <!-- ===== SIDEBAR DRAWER ===== -->
+  <nav class="drawer" aria-label="Sidebar">
+    <div class="drawer-title">Menu</div>
+
+    <ul class="menu">
+      <!-- Keep only links that exist right now -->
+      <li class="section">Matches</li>
+      <li><a href="schedule.html">View Match Schedule</a></li>
+
+      <li class="section">Contact</li>
+      <li><a href="contact.html">Contact the Assignor</a></li>
+
+      <!-- Future sections (uncomment later)
+      <li class="section">Forms</li>
+      <li><a href="form-request-referee.html">Request a Referee</a></li>
+      <li><a href="form-team-feedback.html">Team Post-Match Feedback</a></li>
+      <li><a href="form-referee-report.html">Referee Match Report</a></li>
+      <li><a href="form-card-report.html">Card Report</a></li>
+      -->
+    </ul>
+  </nav>
 
   <!-- ===== MAIN CONTENT ===== -->
   <main>
@@ -61,8 +77,12 @@
     </div>
   </footer>
 
-  <!-- Auto-year -->
+  <!-- ===== JS: close drawer after clicking any link ===== -->
   <script>
+    const navToggle = document.getElementById('nav-toggle');
+    document.querySelectorAll('.drawer a, .overlay').forEach(el => {
+      el.addEventListener('click', () => { navToggle.checked = false; });
+    });
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
