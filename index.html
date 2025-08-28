@@ -4,121 +4,45 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Texas Rugby Referees</title>
-  <link rel="stylesheet" href="style.css?v=footer1" />
-  <style>
-    /* Drawer footer stick to bottom */
-    .drawer {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-    .drawer-footer {
-      margin-top: auto; /* push to bottom */
-      padding: 16px 12px;
-      font-weight: 600;
-      color: var(--primary);
-      text-align: center;
-      border-top: 1px solid #e5e7eb;
-    }
-    .drawer-credit {
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-weight: 400;
-      margin-top: 4px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css?v=include1" />
 </head>
 <body>
 
-  <!-- Hidden checkbox must be first -->
-  <input id="nav-toggle" type="checkbox" hidden>
+  <!-- ===== Inject nav here ===== -->
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("/nav.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("nav-placeholder").innerHTML = html;
 
-  <!-- Hamburger button -->
-  <label for="nav-toggle" class="hambutton" aria-label="Open menu">
-    <span></span>
-  </label>
+        // after injecting, wire up JS to close drawer on clicks
+        const navToggle = document.getElementById('nav-toggle');
+        document.querySelectorAll('.drawer a, .overlay').forEach(el => {
+          el.addEventListener('click', () => { navToggle.checked = false; });
+        });
+      });
+  </script>
 
-  <!-- Header -->
+  <!-- Header (kept separate so it doesn’t reload with nav) -->
   <header class="site-header">
     <h1 class="site-title">Texas Rugby Referees</h1>
     <p class="site-subtitle">Assigning • Development • Community</p>
   </header>
-
-  <!-- Overlay -->
-  <label for="nav-toggle" class="overlay" aria-hidden="true"></label>
-
-  <!-- Sidebar Drawer with Accordion -->
-  <nav class="drawer" aria-label="Sidebar">
-    <div class="drawer-title">Menu</div>
-
-    <div class="accordion">
-      <!-- About -->
-      <details open>
-        <summary>About</summary>
-        <div class="links">
-          <a href="about.html#about-trra">About TRRA</a>
-          <a href="events.html">Referee Event Calendar</a>
-          <a href="about.html#leadership">Leadership</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </details>
-
-      <!-- Forms -->
-      <details>
-        <summary>Forms</summary>
-        <div class="links">
-          <a href="form-card-report.html">Card Report (Refs)</a>
-          <a href="form-referee-report.html">Referee Match Report (Refs)</a>
-          <a href="form-request-referee.html">Request a Referee (Teams)</a>
-          <a href="form-team-feedback.html">Team Post-Match Feedback (Teams)</a>
-        </div>
-      </details>
-
-      <!-- Matches -->
-      <details>
-        <summary>Matches</summary>
-        <div class="links">
-          <a href="assignments.html">Referee Assignments</a>
-          <a href="referees.html">Referee Contacts</a>
-          <a href="schedule.html">Master Schedule</a>
-          <a href="schedule-men.html">Men’s Schedule</a>
-          <a href="teams.html">Team Contacts</a>
-          <a href="schedule-women.html">Women’s Schedule</a>
-        </div>
-      </details>
-
-      <!-- Social -->
-      <details>
-        <summary>Social</summary>
-        <div class="links">
-          <a href="join-whatsapp.html">WhatsApp Community</a>
-          <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
-          <a href="blog.html">Referee Stories (Latest Posts)</a>
-        </div>
-      </details>
-    </div>
-
-    <!-- Footer pinned to bottom -->
-    <div class="drawer-footer">
-      Texas Rugby Referee Association
-      <div class="drawer-credit">Created &amp; Managed by Justin X. Hale</div>
-    </div>
-  </nav>
 
   <!-- Main content -->
   <main>
     <div class="card">
       <h2>Welcome</h2>
       <p>This is a placeholder home section. Replace with announcements or a big call-to-action.</p>
-      <p><a href="schedule.html">→ View Match Schedule</a></p>
+      <p><a href="/matches/schedule.html">→ View Match Schedule</a></p>
     </div>
 
     <div class="card">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="schedule.html">Matches</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/matches/schedule.html">Matches</a></li>
+        <li><a href="/about/contact.html">Contact</a></li>
       </ul>
     </div>
   </main>
@@ -128,23 +52,13 @@
     <div class="footer-inner">
       <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
       <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
-      <a href="contact.html">Contact</a>
+      <a href="/about/contact.html">Contact</a>
       <span class="muted">© <span id="y"></span> Texas Rugby Referees</span>
     </div>
   </footer>
 
-  <!-- JS -->
   <script>
-    const navToggle = document.getElementById('nav-toggle');
-    // Close drawer only on link clicks
-    document.querySelectorAll('.drawer a').forEach(a => {
-      a.addEventListener('click', () => { navToggle.checked = false; });
-    });
-    // Close drawer on overlay tap
-    document.querySelector('.overlay').addEventListener('click', () => {
-      navToggle.checked = false;
-    });
-    // Footer year
+    // footer year
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
