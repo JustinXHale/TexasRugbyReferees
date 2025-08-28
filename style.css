@@ -83,6 +83,7 @@ body {
 
 /* Drawer container */
 .drawer {
+  display: none;
   position: relative; margin-top: 10px; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,.06); padding: 8px;
 }
