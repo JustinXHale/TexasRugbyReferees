@@ -4,27 +4,49 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Texas Rugby Referees</title>
-  <link rel="stylesheet" href="style.css?v=include1" />
+  <link rel="stylesheet" href="style.css?v=include-fix1" />
 </head>
 <body>
 
   <!-- ===== Inject nav here ===== -->
   <div id="nav-placeholder"></div>
   <script>
-    fetch("/nav.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("nav-placeholder").innerHTML = html;
+    // Figure out the repo base path, e.g. "/TexasRugbyReferees/"
+    (function () {
+      const parts = window.location.pathname.split('/').filter(Boolean);
+      // project pages look like "/<user>/<repo>/..." or just "/<repo>/..."
+      // Our base is always "/<repo>/"
+      const repo = parts[0]; // "TexasRugbyReferees"
+      const base = '/' + repo + '/';
 
-        // after injecting, wire up JS to close drawer on clicks
-        const navToggle = document.getElementById('nav-toggle');
-        document.querySelectorAll('.drawer a, .overlay').forEach(el => {
-          el.addEventListener('click', () => { navToggle.checked = false; });
+      // 1) Fetch nav.html from the correct base
+      fetch(base + 'nav.html')
+        .then(res => res.text())
+        .then(html => {
+          const holder = document.getElementById('nav-placeholder');
+          holder.innerHTML = html;
+
+          // 2) Rewrite any nav links that start with "/" to "/<repo>/..."
+          holder.querySelectorAll('a[href^="/"]').forEach(a => {
+            a.setAttribute('href', base + a.getAttribute('href').replace(/^\//, ''));
+          });
+
+          // 3) Wire up close behaviors
+          const navToggle = document.getElementById('nav-toggle');
+          holder.querySelectorAll('.drawer a').forEach(a => {
+            a.addEventListener('click', () => { navToggle.checked = false; });
+          });
+          holder.querySelector('.overlay').addEventListener('click', () => {
+            navToggle.checked = false;
+          });
+        })
+        .catch(err => {
+          console.error('Failed to load nav:', err);
         });
-      });
+    })();
   </script>
 
-  <!-- Header (kept separate so it doesn’t reload with nav) -->
+  <!-- Header (brand) -->
   <header class="site-header">
     <h1 class="site-title">Texas Rugby Referees</h1>
     <p class="site-subtitle">Assigning • Development • Community</p>
@@ -35,14 +57,14 @@
     <div class="card">
       <h2>Welcome</h2>
       <p>This is a placeholder home section. Replace with announcements or a big call-to-action.</p>
-      <p><a href="/matches/schedule.html">→ View Match Schedule</a></p>
+      <p><a href="matches/schedule.html">→ View Match Schedule</a></p>
     </div>
 
     <div class="card">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="/matches/schedule.html">Matches</a></li>
-        <li><a href="/about/contact.html">Contact</a></li>
+        <li><a href="matches/schedule.html">Matches</a></li>
+        <li><a href="about/contact.html">Contact</a></li>
       </ul>
     </div>
   </main>
@@ -52,13 +74,12 @@
     <div class="footer-inner">
       <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
       <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
-      <a href="/about/contact.html">Contact</a>
+      <a href="about/contact.html">Contact</a>
       <span class="muted">© <span id="y"></span> Texas Rugby Referees</span>
     </div>
   </footer>
 
   <script>
-    // footer year
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
