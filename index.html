@@ -1,47 +1,104 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- ========= META ========= -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Texas Rugby Referees</title>
-
-  <!-- ========= CSS (cache-busted) ========= -->
   <link rel="stylesheet" href="style.css?v=sidebar3" />
 </head>
 <body>
 
-  <!-- Hidden checkbox for the hamburger -->
+  <!-- 1) Hidden checkbox MUST come first  -->
   <input id="nav-toggle" type="checkbox" hidden>
 
-  <!-- Hamburger button -->
+  <!-- 2) Hamburger label MUST be immediately after the checkbox -->
   <label for="nav-toggle" class="hambutton" aria-label="Open menu">
     <span></span>
   </label>
 
-  <!-- Header -->
+  <!-- 3) Header (can be anywhere after 1 & 2) -->
   <header class="site-header">
     <h1 class="site-title">Texas Rugby Referees</h1>
     <p class="site-subtitle">Assigning • Development • Community</p>
   </header>
 
-  <!-- Overlay (tap/click to close) -->
+  <!-- 4) Overlay MUST be a sibling that comes after the checkbox -->
   <label for="nav-toggle" class="overlay" aria-hidden="true"></label>
 
-  <!-- Sidebar Drawer: FULL MENU -->
+  <!-- 5) Drawer MUST also be a later sibling (same parent as #nav-toggle) -->
   <nav class="drawer" aria-label="Sidebar">
     <div class="drawer-title">Menu</div>
     <ul class="menu">
-
-      <!-- ===== About (A–Z) ===== -->
+      <!-- About -->
       <li class="section">About</li>
-      <li><a href="about.html#about-trra">About TRRA</a></li>              <!-- TODO page -->
-      <li><a href="events.html">Referee Event Calendar</a></li>            <!-- TODO page -->
-      <li><a href="about.html#leadership">Leadership</a></li>              <!-- TODO page -->
-      <li><a href="contact.html">Contact</a></li>                          <!-- EXISTS -->
+      <li><a href="about.html#about-trra">About TRRA</a></li>
+      <li><a href="events.html">Referee Event Calendar</a></li>
+      <li><a href="about.html#leadership">Leadership</a></li>
+      <li><a href="contact.html">Contact</a></li>
 
-      <!-- ===== Blog ===== -->
+      <!-- Blog -->
       <li class="section">Blog</li>
-      <li><a href="blog.html">Latest Posts</a></li>                         <!-- TODO page or link to external blog -->
+      <li><a href="blog.html">Latest Posts</a></li>
 
-      <!-- ===== Forms (A–Z) ===== -->
+      <!-- Forms -->
+      <li class="section">Forms</li>
+      <li><a href="form-card-report.html">Card Report (Refs)</a></li>
+      <li><a href="form-referee-report.html">Referee Match Report (Refs)</a></li>
+      <li><a href="form-request-referee.html">Request a Referee (Teams)</a></li>
+      <li><a href="form-team-feedback.html">Team Post-Match Feedback (Teams)</a></li>
+
+      <!-- Matches -->
+      <li class="section">Matches</li>
+      <li><a href="assignments.html">Referee Assignments</a></li>
+      <li><a href="referees.html">Referee Contacts</a></li>
+      <li><a href="schedule.html">Master Schedule</a></li>
+      <li><a href="schedule-men.html">Men’s Schedule</a></li>
+      <li><a href="teams.html">Team Contacts</a></li>
+      <li><a href="schedule-women.html">Women’s Schedule</a></li>
+
+      <!-- Social -->
+      <li class="section">Social</li>
+      <li><a href="join-whatsapp.html">WhatsApp Community</a></li>
+      <li><a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a></li>
+    </ul>
+    <div class="drawer-footer">Texas Rugby Referee Association</div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <div class="card">
+      <h2>Welcome</h2>
+      <p>This is a placeholder home section. Replace with announcements or a big call-to-action.</p>
+      <p><a href="schedule.html">→ View Match Schedule</a></p>
+    </div>
+
+    <div class="card">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="schedule.html">Matches</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
+      <a href="contact.html">Contact</a>
+      <span class="muted">© <span id="y"></span> Texas Rugby Referees</span>
+    </div>
+  </footer>
+
+  <!-- JS: close drawer on link/overlay; set year -->
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    document.querySelectorAll('.drawer a, .overlay').forEach(el => {
+      el.addEventListener('click', () => { navToggle.checked = false; });
+    });
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
