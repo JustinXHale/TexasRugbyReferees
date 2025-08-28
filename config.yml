@@ -1,0 +1,8 @@
+title: Texas Rugby Referees
+description: Assigning • Development • Community
+# For a project site:
+url: "https://justinxhale.github.io"
+baseurl: "/TexasRugbyReferees"   # <= your repo name, keep the leading slash
+
+theme: null        # we use our own layout/CSS (no theme)
+markdown: kramdown # built-in, no custom plugins needed
