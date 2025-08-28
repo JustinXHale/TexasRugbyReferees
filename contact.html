@@ -33,16 +33,31 @@
     </div>
   </main>
 
-  <!-- ====== FOOTER (copy from index.html) ====== -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
-      <a href="join-whatsapp.html">WhatsApp</a>
-      <a href="contact.html">Contact</a>
-      <span class="muted">© <span id="y"></span> Texas Rugby Referees</span>
-    </div>
-  </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <!-- ===== FOOTER INCLUDE ===== -->
+  <div id="footer-placeholder"></div>
+  <script>
+    (function () {
+      const parts = window.location.pathname.split('/').filter(Boolean);
+      const repo  = parts[0] || '';
+      const base  = repo ? '/' + repo + '/' : '/';
+
+      fetch(base + 'footer.html')
+        .then(res => res.text())
+        .then(html => {
+          const fp = document.getElementById('footer-placeholder');
+          fp.innerHTML = html;
+
+          // Rewrite absolute links in footer as well
+          fp.querySelectorAll('a[href^="/"]').forEach(a => {
+            a.setAttribute('href', base + a.getAttribute('href').replace(/^\//, ''));
+          });
+
+          // Set the year
+          const y = fp.querySelector('#y');
+          if (y) y.textContent = new Date().getFullYear();
+        })
+        .catch(err => console.error('Failed to load footer:', err));
+    })();
+  </script>
 </body>
 </html>
