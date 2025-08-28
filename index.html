@@ -7,115 +7,41 @@
   <title>Texas Rugby Referees</title>
 
   <!-- ========= CSS (cache-busted) ========= -->
-  <link rel="stylesheet" href="style.css?v=sidebar2" />
+  <link rel="stylesheet" href="style.css?v=sidebar3" />
 </head>
 <body>
 
-  <!-- =========================================================
-       NAV TOGGLE (hidden checkbox) — used by the hamburger
-       ========================================================= -->
+  <!-- Hidden checkbox for the hamburger -->
   <input id="nav-toggle" type="checkbox" hidden>
 
-  <!-- =========================================================
-       HAMBURGER BUTTON — always visible, toggles #nav-toggle
-       ========================================================= -->
+  <!-- Hamburger button -->
   <label for="nav-toggle" class="hambutton" aria-label="Open menu">
     <span></span>
   </label>
 
-  <!-- =========================================================
-       HEADER — brand, centered (same on every page)
-       ========================================================= -->
+  <!-- Header -->
   <header class="site-header">
     <h1 class="site-title">Texas Rugby Referees</h1>
     <p class="site-subtitle">Assigning • Development • Community</p>
   </header>
 
-  <!-- =========================================================
-       OVERLAY — tap/click to close the drawer
-       ========================================================= -->
+  <!-- Overlay (tap/click to close) -->
   <label for="nav-toggle" class="overlay" aria-hidden="true"></label>
 
-  <!-- =========================================================
-       SIDEBAR DRAWER — FULL NAV MENU (mobile-first, same on desktop)
-       NOTE: Some targets are TODO pages; links included for future.
-       ========================================================= -->
+  <!-- Sidebar Drawer: FULL MENU -->
   <nav class="drawer" aria-label="Sidebar">
     <div class="drawer-title">Menu</div>
     <ul class="menu">
 
       <!-- ===== About (A–Z) ===== -->
       <li class="section">About</li>
-      <!-- TODO: Create about.html and add sections with matching IDs -->
       <li><a href="about.html#about-trra">About TRRA</a></li>              <!-- TODO page -->
       <li><a href="events.html">Referee Event Calendar</a></li>            <!-- TODO page -->
       <li><a href="about.html#leadership">Leadership</a></li>              <!-- TODO page -->
-      <li><a href="join-whatsapp.html">Join WhatsApp Community</a></li>    <!-- TODO page -->
-
-      <!-- ===== Contact ===== -->
-      <li class="section">Contact</li>
       <li><a href="contact.html">Contact</a></li>                          <!-- EXISTS -->
 
+      <!-- ===== Blog ===== -->
+      <li class="section">Blog</li>
+      <li><a href="blog.html">Latest Posts</a></li>                         <!-- TODO page or link to external blog -->
+
       <!-- ===== Forms (A–Z) ===== -->
-      <li class="section">Forms</li>
-      <li><a href="form-card-report.html">Card Report (Refs)</a></li>                  <!-- TODO page -->
-      <li><a href="form-referee-report.html">Referee Match Report (Refs)</a></li>     <!-- TODO page -->
-      <li><a href="form-request-referee.html">Request a Referee (Teams)</a></li>      <!-- TODO page -->
-      <li><a href="form-team-feedback.html">Team Post-Match Feedback (Teams)</a></li> <!-- TODO page -->
-
-      <!-- ===== Matches (A–Z) ===== -->
-      <li class="section">Matches</li>
-      <li><a href="assignments.html">Referee Assignments</a></li>          <!-- TODO page -->
-      <li><a href="referees.html">Referee Contacts</a></li>                <!-- TODO page -->
-      <li><a href="schedule.html">Master Schedule</a></li>                 <!-- EXISTS -->
-      <li><a href="schedule-men.html">Men’s Schedule</a></li>              <!-- TODO page -->
-      <li><a href="teams.html">Team Contacts</a></li>                      <!-- TODO page -->
-      <li><a href="schedule-women.html">Women’s Schedule</a></li>          <!-- TODO page -->
-
-    </ul>
-  </nav>
-
-  <!-- =========================================================
-       MAIN CONTENT — simple home section
-       ========================================================= -->
-  <main>
-    <div class="card">
-      <h2>Welcome</h2>
-      <p>This is a placeholder home section. Replace with announcements or a big call-to-action.</p>
-      <p><a href="schedule.html">→ View Match Schedule</a></p>
-    </div>
-
-    <div class="card">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="schedule.html">Matches</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </main>
-
-  <!-- =========================================================
-       FOOTER — edit social links as needed
-       ========================================================= -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
-      <a href="contact.html">Contact</a>
-      <span class="muted">© <span id="y"></span> Texas Rugby Referees</span>
-    </div>
-  </footer>
-
-  <!-- =========================================================
-       JS — close drawer when clicking a link or the overlay,
-       and set the current year in the footer
-       ========================================================= -->
-  <script>
-    const navToggle = document.getElementById('nav-toggle');
-    document.querySelectorAll('.drawer a, .overlay').forEach(el => {
-      el.addEventListener('click', () => { navToggle.checked = false; });
-    });
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
