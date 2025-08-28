@@ -64,12 +64,8 @@ body{
 
 /* Animate to an “X” when open */
 #nav-toggle:checked + .hambutton span{ background:transparent }
-#nav-toggle:checked + .hambutton span::before{
-  top:0; transform:rotate(45deg);
-}
-#nav-toggle:checked + .hambutton span::after{
-  top:0; transform:rotate(-45deg);
-}
+#nav-toggle:checked + .hambutton span::before{ top:0; transform:rotate(45deg) }
+#nav-toggle:checked + .hambutton span::after { top:0; transform:rotate(-45deg) }
 
 /* ============================================================
    SIDEBAR DRAWER + OVERLAY
@@ -82,51 +78,4 @@ body{
 .drawer{
   position: fixed; inset:0 auto 0 0; /* left side */
   width: clamp(260px, 80vw, 360px);
-  background:#fff; border-right:1px solid #e5e7eb;
-  border-radius:0 var(--radius) var(--radius) 0;
-  transform: translateX(-100%); transition: transform .25s ease;
-  z-index:1060;
-  padding:60px 12px 12px;   /* top padding so content sits below hamburger */
-  box-shadow: 0 10px 30px rgba(0,0,0,.12);
-}
-
-/* Drawer content */
-.drawer .drawer-title{
-  margin:0 0 12px;
-  font-weight:800; color:var(--primary); font-size:1.2rem;
-  padding:0 4px;
-}
-.drawer .menu{ list-style:none; margin:0; padding:0; display:grid; gap:6px }
-.drawer .section{
-  margin:10px 4px 4px; font-weight:700; color:var(--muted); font-size:.9rem;
-}
-.drawer a{
-  display:block; padding:12px; border-radius:10px; text-decoration:none; color:var(--text);
-}
-.drawer a:hover{ background:#f1f5f9; color:var(--primary) }
-
-/* Toggle ON: show overlay + slide drawer */
-#nav-toggle:checked ~ .overlay{ opacity:1; pointer-events:auto }
-#nav-toggle:checked ~ .drawer{ transform: translateX(0) }
-
-/* ============================================================
-   MAIN CONTENT + CARDS
-   ============================================================ */
-main{ max-width:var(--maxw); margin:0 auto; padding:24px var(--pad) }
-.card{
-  background:#fff; border:1px solid #e5e7eb; border-radius:var(--radius);
-  box-shadow:0 1px 4px rgba(0,0,0,.06); padding:18px; margin:16px 0;
-}
-h1,h2,h3{ color:var(--primary); margin:0 0 8px }
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-.site-footer{ border-top:1px solid #e5e7eb; margin-top:24px; padding:18px var(--pad) }
-.footer-inner{
-  max-width:var(--maxw); margin:0 auto; display:flex; flex-wrap:wrap;
-  align-items:center; justify-content:center; gap:14px; color:var(--muted);
-}
-.footer-inner a{ color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:8px }
-.footer-inner a:hover{ background:rgba(15,23,42,.05); color:var(--primary) }
-.muted{ color:var(--muted) }
+  background:#fff; border-right:1
