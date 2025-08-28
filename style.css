@@ -1,71 +1,115 @@
-:root {
-  --bg: #f8fafc;
-  --primary: #0f172a;
-  --accent: #2563eb;
-  --text: #1e293b;
-  --maxw: 900px;
-  --pad: 16px;
-}
+<!-- =============================
+  style.css (drop-in replacement)
+  ============================= -->
+/* Root + base / :root { --bg: #f8fafc; --primary: #0f172a; / header text / --accent: #2563eb;  / link hover */ --text: #1e293b; --muted: #64748b; --maxw: 1100px; --pad: 16px; }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+{ box-sizing: border-box; } html, body { margin:0; padding:0; } body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); }
 
-body {
-  font-family: system-ui, sans-serif;
-  line-height: 1.6;
-  color: var(--text);
-  background: var(--bg);
-}
 
-header {
-  background: var(--primary);
-  color: #fff;
-  padding: 12px var(--pad);
-}
+/* Header & Title */ .site-header { padding: 18px var(--pad) 10px; text-align: center; } .site-title { margin: 0; font-size: clamp(1.4rem, 2vw + 1rem, 2.2rem); color: var(--primary); font-weight: 800; letter-spacing: 0.2px; } .site-subtitle { margin: 4px 0 0; color: var(--muted); font-size: .95rem; }
 
-nav {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  align-items: center;
-}
+/* Main Nav */ .main-nav { margin-top: 10px; } .menu { list-style: none; display: flex; gap: 10px; justify-content: center; padding: 0; margin: 0; flex-wrap: wrap; } .menu-item > a, .menu-item > details > summary { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 10px; text-decoration: none; color: var(--primary); font-weight: 600; cursor: pointer; } .menu-item > a:hover, .menu-item > details > summary:hover { background: rgba(37, 99, 235, .08); }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background 0.2s;
-}
+/* Dropdowns (CSS-only via <details>) */ .menu-item details { position: relative; } .menu-item details[open] > summary { background: rgba(37,99,235,.08); } .menu-item details > summary::-webkit-details-marker { display: none; } .menu-item details > summary::after { content: "▾"; font-size: .9rem; transform: translateY(-1px); }
 
-nav a.active,
-nav a:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
+.submenu { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); min-width: 220px; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.08); padding: 8px; display: grid; gap: 4px; z-index: 10; } .submenu a { display: block; padding: 10px 12px; border-radius: 8px; color: var(--text); text-decoration: none; white-space: nowrap; } .submenu a:hover { background: #f1f5f9; color: var(--primary); }
 
-main {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 32px var(--pad);
-}
+/* Keep dropdown within viewport on small screens */ @media (max-width: 640px) { .submenu { left: 0; transform: none; right: 0; margin: 0 auto; max-width: 92vw; } }
 
-h1, h2 {
-  color: var(--primary);
-  margin-bottom: 12px;
-}
+/* Content wrappers */ main { max-width: var(--maxw); margin: 0 auto; padding: 28px var(--pad); } .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.06); padding: 18px; margin: 16px 0; }
 
-.card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin: 20px 0;
-}
+/* Footer */ .site-footer { border-top: 1px solid #e5e7eb; margin-top: 24px; padding: 18px var(--pad); } .footer-inner { max-width: var(--maxw); margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; color: var(--muted); } .footer-inner a { color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 8px; } .footer-inner a:hover { background: rgba(15,23,42,.05); color: var(--primary); } .icon { width: 18px; height: 18px; display: inline-block; }
 
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #64748b;
-  padding: 24px var(--pad);
-}
+/* Utility */ .muted { color: var(--muted); }
+
+<!-- =============================
+  index.html (example shell using the nav + footer)
+  ============================= --><!doctype html>
+
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Texas Rugby Referees</title>
+<link rel="stylesheet" href="style.css" /><body>
+  <header class="site-header">
+    <h1 class="site-title">Texas Rugby Referees</h1>
+    <p class="site-subtitle">Assigning • Development • Community</p><nav class="main-nav" aria-label="Primary">
+  <ul class="menu">
+    <!-- About (alphabetical top-level order: About · Contact · Forms · Matches) -->
+    <li class="menu-item dropdown">
+      <details>
+        <summary>About</summary>
+        <ul class="submenu" role="menu">
+          <li><a role="menuitem" href="about.html#about-trra">About TRRA</a></li>
+          <li><a role="menuitem" href="events.html">Referee Event Calendar</a></li>
+          <li><a role="menuitem" href="about.html#leadership">Leadership</a></li>
+          <li><a role="menuitem" href="join-whatsapp.html">Join WhatsApp Community</a></li>
+        </ul>
+      </details>
+    </li>
+
+    <!-- Contact (single link) -->
+    <li class="menu-item"><a href="contact.html">Contact</a></li>
+
+    <!-- Forms -->
+    <li class="menu-item dropdown">
+      <details>
+        <summary>Forms</summary>
+        <ul class="submenu" role="menu">
+          <li><a role="menuitem" href="form-card-report.html">Card Report (Refs)</a></li>
+          <li><a role="menuitem" href="form-referee-report.html">Referee Match Report (Refs)</a></li>
+          <li><a role="menuitem" href="form-request-referee.html">Request a Referee (Teams)</a></li>
+          <li><a role="menuitem" href="form-team-feedback.html">Team Post-Match Feedback (Teams)</a></li>
+        </ul>
+      </details>
+    </li>
+
+    <!-- Matches -->
+    <li class="menu-item dropdown">
+      <details>
+        <summary>Matches</summary>
+        <ul class="submenu" role="menu">
+          <li><a role="menuitem" href="schedule.html">Master Schedule</a></li>
+          <li><a role="menuitem" href="schedule-men.html">Men’s Schedule</a></li>
+          <li><a role="menuitem" href="assignments.html">Referee Assignments</a></li>
+          <li><a role="menuitem" href="referees.html">Referee Contacts</a></li>
+          <li><a role="menuitem" href="teams.html">Team Contacts</a></li>
+          <li><a role="menuitem" href="schedule-women.html">Women’s Schedule</a></li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+</nav>
+
+  </header>  <main>
+    <div class="card">
+      <h2>Welcome</h2>
+      <p>This is a placeholder home section. Replace with announcements or a big CTA.</p>
+      <p><a href="form-request-referee.html">→ Request a Referee</a></p>
+    </div><div class="card">
+  <h3>Quick Links</h3>
+  <ul>
+    <li><a href="assignments.html">Referee Assignments</a></li>
+    <li><a href="schedule.html">Master Schedule</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+  </main>  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="https://facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.2 10.44 22v-7.02H7.9v-2.92h2.54V9.41c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.62.77-1.62 1.56v1.87h2.76l-.44 2.92h-2.32V22C18.34 21.2 22 17.08 22 12.06z"/></svg>
+        Facebook
+      </a>
+      <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm0 2.2A2.8 2.8 0 1014.8 12 2.8 2.8 0 0012 9.2zm6.1-.9a1.1 1.1 0 11-1.1-1.1 1.1 1.1 0 011.1 1.1z"/></svg>
+        Instagram
+      </a>
+      <a href="join-whatsapp.html" aria-label="Join WhatsApp">WhatsApp</a>
+      <a href="contact.html" aria-label="Contact">Contact</a>
+      <span class="muted">© <span id="y"></span> Texas Rugby Referees</span>
+    </div>
+  </footer>  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script></body>
+</html>
