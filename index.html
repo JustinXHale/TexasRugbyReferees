@@ -1,33 +1,91 @@
-<!doctype html>
+<!-- =============================
+  index.html (example shell using the nav + footer)
+  ============================= --><!doctype html>
+
 <html lang="en">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Texas Rugby Referees</title>
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css" /><body>
+  <header class="site-header">
+    <h1 class="site-title">Texas Rugby Referees</h1>
+    <p class="site-subtitle">Assigning • Development • Community</p><nav class="main-nav" aria-label="Primary">
+  <ul class="menu">
+    <!-- About (alphabetical top-level order: About · Contact · Forms · Matches) -->
+    <li class="menu-item dropdown">
+      <details>
+        <summary>About</summary>
+        <ul class="submenu" role="menu">
+          <li><a role="menuitem" href="about.html#about-trra">About TRRA</a></li>
+          <li><a role="menuitem" href="events.html">Referee Event Calendar</a></li>
+          <li><a role="menuitem" href="about.html#leadership">Leadership</a></li>
+          <li><a role="menuitem" href="join-whatsapp.html">Join WhatsApp Community</a></li>
+        </ul>
+      </details>
+    </li>
 
-<header>
-  <nav>
-    <strong>Texas Rugby Referees</strong>
-    <a class="active" href="./">Home</a>
-    <a href="assignments.html">Assignments</a>
-    <a href="contact.html">Contact</a>
-    <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
-    <a href="https://x.com/yourhandle" target="_blank">X/Twitter</a>
-  </nav>
-</header>
+    <!-- Contact (single link) -->
+    <li class="menu-item"><a href="contact.html">Contact</a></li>
 
-<main>
-  <h1>Welcome</h1>
-  <p>We support community & collegiate rugby with qualified match officials across Texas.</p>
+    <!-- Forms -->
+    <li class="menu-item dropdown">
+      <details>
+        <summary>Forms</summary>
+        <ul class="submenu" role="menu">
+          <li><a role="menuitem" href="form-card-report.html">Card Report (Refs)</a></li>
+          <li><a role="menuitem" href="form-referee-report.html">Referee Match Report (Refs)</a></li>
+          <li><a role="menuitem" href="form-request-referee.html">Request a Referee (Teams)</a></li>
+          <li><a role="menuitem" href="form-team-feedback.html">Team Post-Match Feedback (Teams)</a></li>
+        </ul>
+      </details>
+    </li>
 
-  <div class="card">
-    <h2>Upcoming</h2>
-    <p>Post quick announcements here: meetings, courses, tournament requests, etc.</p>
-  </div>
-</main>
+    <!-- Matches -->
+    <li class="menu-item dropdown">
+      <details>
+        <summary>Matches</summary>
+        <ul class="submenu" role="menu">
+          <li><a role="menuitem" href="schedule.html">Master Schedule</a></li>
+          <li><a role="menuitem" href="schedule-men.html">Men’s Schedule</a></li>
+          <li><a role="menuitem" href="assignments.html">Referee Assignments</a></li>
+          <li><a role="menuitem" href="referees.html">Referee Contacts</a></li>
+          <li><a role="menuitem" href="teams.html">Team Contacts</a></li>
+          <li><a role="menuitem" href="schedule-women.html">Women’s Schedule</a></li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+</nav>
 
-<footer>
-  © <span id="y"></span> Texas Rugby Referees
-</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  </header>  <main>
+    <div class="card">
+      <h2>Welcome</h2>
+      <p>This is a placeholder home section. Replace with announcements or a big CTA.</p>
+      <p><a href="form-request-referee.html">→ Request a Referee</a></p>
+    </div><div class="card">
+  <h3>Quick Links</h3>
+  <ul>
+    <li><a href="assignments.html">Referee Assignments</a></li>
+    <li><a href="schedule.html">Master Schedule</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+  </main>  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="https://facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.2 10.44 22v-7.02H7.9v-2.92h2.54V9.41c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.62.77-1.62 1.56v1.87h2.76l-.44 2.92h-2.32V22C18.34 21.2 22 17.08 22 12.06z"/></svg>
+        Facebook
+      </a>
+      <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm0 2.2A2.8 2.8 0 1014.8 12 2.8 2.8 0 0012 9.2zm6.1-.9a1.1 1.1 0 11-1.1-1.1 1.1 1.1 0 011.1 1.1z"/></svg>
+        Instagram
+      </a>
+      <a href="join-whatsapp.html" aria-label="Join WhatsApp">WhatsApp</a>
+      <a href="contact.html" aria-label="Contact">Contact</a>
+      <span class="muted">© <span id="y"></span> Texas Rugby Referees</span>
+    </div>
+  </footer>  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script></body>
 </html>
