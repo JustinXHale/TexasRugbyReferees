@@ -4,7 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Texas Rugby Referees</title>
-  <link rel="stylesheet" href="style.css?v=accordion2" />
+  <link rel="stylesheet" href="style.css?v=footer1" />
+  <style>
+    /* Drawer footer stick to bottom */
+    .drawer {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .drawer-footer {
+      margin-top: auto; /* push to bottom */
+      padding: 16px 12px;
+      font-weight: 600;
+      color: var(--primary);
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+    }
+    .drawer-credit {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 4px;
+    }
+  </style>
 </head>
 <body>
 
@@ -22,7 +44,7 @@
     <p class="site-subtitle">Assigning • Development • Community</p>
   </header>
 
-  <!-- Overlay (tap to close) -->
+  <!-- Overlay -->
   <label for="nav-toggle" class="overlay" aria-hidden="true"></label>
 
   <!-- Sidebar Drawer with Accordion -->
@@ -34,10 +56,10 @@
       <details open>
         <summary>About</summary>
         <div class="links">
-          <a href="about.html#about-trra">About TRRA</a>            <!-- TODO -->
-          <a href="events.html">Referee Event Calendar</a>          <!-- TODO -->
-          <a href="about.html#leadership">Leadership</a>            <!-- TODO -->
-          <a href="contact.html">Contact</a>                        <!-- EXISTS -->
+          <a href="about.html#about-trra">About TRRA</a>
+          <a href="events.html">Referee Event Calendar</a>
+          <a href="about.html#leadership">Leadership</a>
+          <a href="contact.html">Contact</a>
         </div>
       </details>
 
@@ -45,10 +67,10 @@
       <details>
         <summary>Forms</summary>
         <div class="links">
-          <a href="form-card-report.html">Card Report (Refs)</a>                 <!-- TODO -->
-          <a href="form-referee-report.html">Referee Match Report (Refs)</a>    <!-- TODO -->
-          <a href="form-request-referee.html">Request a Referee (Teams)</a>     <!-- TODO -->
-          <a href="form-team-feedback.html">Team Post-Match Feedback (Teams)</a><!-- TODO -->
+          <a href="form-card-report.html">Card Report (Refs)</a>
+          <a href="form-referee-report.html">Referee Match Report (Refs)</a>
+          <a href="form-request-referee.html">Request a Referee (Teams)</a>
+          <a href="form-team-feedback.html">Team Post-Match Feedback (Teams)</a>
         </div>
       </details>
 
@@ -56,28 +78,32 @@
       <details>
         <summary>Matches</summary>
         <div class="links">
-          <a href="assignments.html">Referee Assignments</a>        <!-- TODO -->
-          <a href="referees.html">Referee Contacts</a>              <!-- TODO -->
-          <a href="schedule.html">Master Schedule</a>               <!-- EXISTS -->
-          <a href="schedule-men.html">Men’s Schedule</a>            <!-- TODO -->
-          <a href="teams.html">Team Contacts</a>                    <!-- TODO -->
-          <a href="schedule-women.html">Women’s Schedule</a>        <!-- TODO -->
+          <a href="assignments.html">Referee Assignments</a>
+          <a href="referees.html">Referee Contacts</a>
+          <a href="schedule.html">Master Schedule</a>
+          <a href="schedule-men.html">Men’s Schedule</a>
+          <a href="teams.html">Team Contacts</a>
+          <a href="schedule-women.html">Women’s Schedule</a>
         </div>
       </details>
 
-      <!-- Social (includes Referee Stories) -->
+      <!-- Social -->
       <details>
         <summary>Social</summary>
         <div class="links">
-          <a href="join-whatsapp.html">WhatsApp Community</a>       <!-- TODO or invite -->
+          <a href="join-whatsapp.html">WhatsApp Community</a>
           <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
           <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
-          <a href="blog.html">Referee Stories (Latest Posts)</a>    <!-- TODO or external -->
+          <a href="blog.html">Referee Stories (Latest Posts)</a>
         </div>
       </details>
     </div>
 
-    <div class="drawer-footer">Texas Rugby Referee Association</div>
+    <!-- Footer pinned to bottom -->
+    <div class="drawer-footer">
+      Texas Rugby Referee Association
+      <div class="drawer-credit">Created &amp; Managed by Justin X. Hale</div>
+    </div>
   </nav>
 
   <!-- Main content -->
@@ -107,14 +133,14 @@
     </div>
   </footer>
 
-  <!-- JS: close drawer on link/overlay only; set year -->
+  <!-- JS -->
   <script>
     const navToggle = document.getElementById('nav-toggle');
-    // Close on any link click inside the drawer
+    // Close drawer only on link clicks
     document.querySelectorAll('.drawer a').forEach(a => {
       a.addEventListener('click', () => { navToggle.checked = false; });
     });
-    // Close on overlay tap
+    // Close drawer on overlay tap
     document.querySelector('.overlay').addEventListener('click', () => {
       navToggle.checked = false;
     });
