@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Texas Rugby Referees</title>
-  <link rel="stylesheet" href="style.css?v=accordion1" />
+  <link rel="stylesheet" href="style.css?v=accordion2" />
 </head>
 <body>
 
@@ -22,7 +22,7 @@
     <p class="site-subtitle">Assigning • Development • Community</p>
   </header>
 
-  <!-- Overlay -->
+  <!-- Overlay (tap to close) -->
   <label for="nav-toggle" class="overlay" aria-hidden="true"></label>
 
   <!-- Sidebar Drawer with Accordion -->
@@ -107,17 +107,18 @@
     </div>
   </footer>
 
-  <!-- JS: close drawer on click; set year -->
+  <!-- JS: close drawer on link/overlay only; set year -->
   <script>
     const navToggle = document.getElementById('nav-toggle');
-    document.querySelectorAll('.drawer a, .overlay, .drawer summary').forEach(el => {
-      el.addEventListener('click', () => {
-        // Close drawer when a link or summary is clicked (optional for summaries)
-        if (el.tagName.toLowerCase() === 'a' || window.innerWidth < 2000) {
-          navToggle.checked = false;
-        }
-      });
+    // Close on any link click inside the drawer
+    document.querySelectorAll('.drawer a').forEach(a => {
+      a.addEventListener('click', () => { navToggle.checked = false; });
     });
+    // Close on overlay tap
+    document.querySelector('.overlay').addEventListener('click', () => {
+      navToggle.checked = false;
+    });
+    // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
