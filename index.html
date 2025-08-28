@@ -1,56 +1,83 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- ===== META ===== -->
+  <!-- ========= META ========= -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Texas Rugby Referees</title>
 
-  <!-- ===== CSS (cache-busted) ===== -->
-  <link rel="stylesheet" href="style.css?v=sidebar1" />
+  <!-- ========= CSS (cache-busted) ========= -->
+  <link rel="stylesheet" href="style.css?v=sidebar2" />
 </head>
 <body>
 
-  <!-- ===== NAV TOGGLE (hidden checkbox) ===== -->
+  <!-- =========================================================
+       NAV TOGGLE (hidden checkbox) — used by the hamburger
+       ========================================================= -->
   <input id="nav-toggle" type="checkbox" hidden>
 
-  <!-- ===== HAMBURGER BUTTON (label toggles checkbox) ===== -->
+  <!-- =========================================================
+       HAMBURGER BUTTON — always visible, toggles #nav-toggle
+       ========================================================= -->
   <label for="nav-toggle" class="hambutton" aria-label="Open menu">
     <span></span>
   </label>
 
-  <!-- ===== HEADER: brand centered ===== -->
+  <!-- =========================================================
+       HEADER — brand, centered (same on every page)
+       ========================================================= -->
   <header class="site-header">
     <h1 class="site-title">Texas Rugby Referees</h1>
     <p class="site-subtitle">Assigning • Development • Community</p>
   </header>
 
-  <!-- ===== OVERLAY (click to close) ===== -->
+  <!-- =========================================================
+       OVERLAY — tap/click to close the drawer
+       ========================================================= -->
   <label for="nav-toggle" class="overlay" aria-hidden="true"></label>
 
-  <!-- ===== SIDEBAR DRAWER ===== -->
+  <!-- =========================================================
+       SIDEBAR DRAWER — FULL NAV MENU (mobile-first, same on desktop)
+       NOTE: Some targets are TODO pages; links included for future.
+       ========================================================= -->
   <nav class="drawer" aria-label="Sidebar">
     <div class="drawer-title">Menu</div>
-
     <ul class="menu">
-      <!-- Keep only links that exist right now -->
-      <li class="section">Matches</li>
-      <li><a href="schedule.html">View Match Schedule</a></li>
 
+      <!-- ===== About (A–Z) ===== -->
+      <li class="section">About</li>
+      <!-- TODO: Create about.html and add sections with matching IDs -->
+      <li><a href="about.html#about-trra">About TRRA</a></li>              <!-- TODO page -->
+      <li><a href="events.html">Referee Event Calendar</a></li>            <!-- TODO page -->
+      <li><a href="about.html#leadership">Leadership</a></li>              <!-- TODO page -->
+      <li><a href="join-whatsapp.html">Join WhatsApp Community</a></li>    <!-- TODO page -->
+
+      <!-- ===== Contact ===== -->
       <li class="section">Contact</li>
-      <li><a href="contact.html">Contact the Assignor</a></li>
+      <li><a href="contact.html">Contact</a></li>                          <!-- EXISTS -->
 
-      <!-- Future sections (uncomment later)
+      <!-- ===== Forms (A–Z) ===== -->
       <li class="section">Forms</li>
-      <li><a href="form-request-referee.html">Request a Referee</a></li>
-      <li><a href="form-team-feedback.html">Team Post-Match Feedback</a></li>
-      <li><a href="form-referee-report.html">Referee Match Report</a></li>
-      <li><a href="form-card-report.html">Card Report</a></li>
-      -->
+      <li><a href="form-card-report.html">Card Report (Refs)</a></li>                  <!-- TODO page -->
+      <li><a href="form-referee-report.html">Referee Match Report (Refs)</a></li>     <!-- TODO page -->
+      <li><a href="form-request-referee.html">Request a Referee (Teams)</a></li>      <!-- TODO page -->
+      <li><a href="form-team-feedback.html">Team Post-Match Feedback (Teams)</a></li> <!-- TODO page -->
+
+      <!-- ===== Matches (A–Z) ===== -->
+      <li class="section">Matches</li>
+      <li><a href="assignments.html">Referee Assignments</a></li>          <!-- TODO page -->
+      <li><a href="referees.html">Referee Contacts</a></li>                <!-- TODO page -->
+      <li><a href="schedule.html">Master Schedule</a></li>                 <!-- EXISTS -->
+      <li><a href="schedule-men.html">Men’s Schedule</a></li>              <!-- TODO page -->
+      <li><a href="teams.html">Team Contacts</a></li>                      <!-- TODO page -->
+      <li><a href="schedule-women.html">Women’s Schedule</a></li>          <!-- TODO page -->
+
     </ul>
   </nav>
 
-  <!-- ===== MAIN CONTENT ===== -->
+  <!-- =========================================================
+       MAIN CONTENT — simple home section
+       ========================================================= -->
   <main>
     <div class="card">
       <h2>Welcome</h2>
@@ -67,7 +94,9 @@
     </div>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- =========================================================
+       FOOTER — edit social links as needed
+       ========================================================= -->
   <footer class="site-footer">
     <div class="footer-inner">
       <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
@@ -77,7 +106,10 @@
     </div>
   </footer>
 
-  <!-- ===== JS: close drawer after clicking any link ===== -->
+  <!-- =========================================================
+       JS — close drawer when clicking a link or the overlay,
+       and set the current year in the footer
+       ========================================================= -->
   <script>
     const navToggle = document.getElementById('nav-toggle');
     document.querySelectorAll('.drawer a, .overlay').forEach(el => {
