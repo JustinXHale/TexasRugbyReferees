@@ -6,7 +6,7 @@ permalink: /
 
 <!-- ===== Banner Image Placeholder ===== -->
 <div class="hero-banner">
-  <img src="Inages/teamphoto2025" alt="Texas Rugby Referees Banner">
+  <img src="images/teamphoto2025" alt="Texas Rugby Referees Banner">
 </div>
 
 # Welcome
