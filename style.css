@@ -73,7 +73,7 @@ body {
 .accordion { display:grid; gap:10px }
 .accordion details { border-radius:12px }
 .accordion summary {
-  list-style:none; cursor:pointer; font-weight:700; color:var(--muted);
+  list-style:none; cursor:pointer; font-weight:900; color:var(--muted); /* thickness of main menu item */
   padding:6px 12px; border-radius:12px;
 }
 .accordion summary::-webkit-details-marker { display:none }
