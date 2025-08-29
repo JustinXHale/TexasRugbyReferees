@@ -192,3 +192,44 @@ body > input#nav-toggle:checked ~ label.overlay{ opacity:1; pointer-events:auto;
 /* ===== Hero banner ===== */
 .hero-banner{ width:100%; margin:0 0 24px }
 .hero-banner img{ width:100%; height:auto; border-radius:0; display:block }
+
+/* ===== Leadership cards ===== */
+.leaders {
+  display: grid;
+  gap: 12px;
+}
+
+/* One card = image left, details right */
+.leader-card {
+  display: grid;
+  grid-template-columns: 84px 1fr;   /* photo | text */
+  align-items: center;
+  gap: 14px;
+  padding: 14px;                     /* uses .card base too */
+}
+
+.leader-photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 12px;               /* soften corners; use 50% for circle */
+  object-fit: cover;
+  background: #e5e7eb;               /* placeholder bg */
+}
+
+.leader-meta h3 {
+  margin: 0 0 2px;
+  color: var(--primary);
+}
+
+.leader-role {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+@media (min-width: 720px) {
+  .leaders {
+    grid-template-columns: 1fr 1fr;  /* two cards across on wider screens */
+  }
+}
+
