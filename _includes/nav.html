@@ -1,20 +1,28 @@
 <!-- _includes/nav.html -->
 <input id="nav-toggle" type="checkbox" hidden>
-<label for="nav-toggle" class="hambutton" aria-label="Open menu"><span></span></label>
+
+<label for="nav-toggle" class="hambutton" aria-label="Open menu">
+  <span></span>
+</label>
+
 <label for="nav-toggle" class="overlay" aria-hidden="true"></label>
 
 <nav class="drawer" aria-label="Sidebar">
   <div class="drawer-title">Menu</div>
+
   <div class="accordion">
+
+    <!-- About -->
     <details>
       <summary>About</summary>
       <div class="links">
-        <a href="{{ site.baseurl }}/about/about-trra.html">About TRRA</a>
+        <a href="{{ site.baseurl }}/about/about.html">About TRRA</a>
         <a href="{{ site.baseurl }}/about/events.html">Referee Event Calendar</a>
         <a href="{{ site.baseurl }}/about/leadership.html">Leadership</a>
       </div>
     </details>
 
+    <!-- Contact -->
     <details>
       <summary>Contact</summary>
       <div class="links">
@@ -22,6 +30,7 @@
       </div>
     </details>
 
+    <!-- Forms -->
     <details>
       <summary>Forms</summary>
       <div class="links">
@@ -32,6 +41,7 @@
       </div>
     </details>
 
+    <!-- Matches -->
     <details>
       <summary>Matches</summary>
       <div class="links">
@@ -44,6 +54,7 @@
       </div>
     </details>
 
+    <!-- Social -->
     <details>
       <summary>Social</summary>
       <div class="links">
