@@ -6,7 +6,7 @@ permalink: /
 
 <!-- ===== Banner Image Placeholder ===== -->
 <div class="hero-banner">
-  <img src="https://via.placeholder.com/1600x400?text=TRRA+Banner+Image" alt="Texas Rugby Referees Banner">
+  <img src="Inages/teamphoto2025" alt="Texas Rugby Referees Banner">
 </div>
 
 # Welcome
