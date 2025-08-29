@@ -3,26 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }} • Texas Rugby Referees</title>
+  <title>{% if page.title %}{{ page.title }} • {% endif %}Texas Rugby Referees</title>
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body>
 
-  <!-- NAV INCLUDE -->
   {% include nav.html %}
 
-  <!-- SITE HEADER -->
   <header class="site-header">
     <h1 class="site-title">Texas Rugby Referees</h1>
-    <p class="site-subtitle">Assigning • Development • Community</p>
+    <p class="site-subtitle">{{ site.description }}</p>
   </header>
 
-  <!-- PAGE CONTENT -->
   <main>
     {{ content }}
   </main>
 
-  <!-- FOOTER INCLUDE -->
   {% include footer.html %}
 
 </body>
