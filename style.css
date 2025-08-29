@@ -74,24 +74,24 @@ h1,h2,h3{color:var(--primary);margin:0 0 8px}
 .muted{color:var(--muted)}
 
 /* ============================================================
-   AUTO-CARDS for Markdown pages
-   - Applies a card look to common Markdown blocks
-   - Skips the first H1 so page titles don't get boxed
+   Auto "card" styling for plain Markdown content
    ============================================================ */
+
+/* Add a radius token we can reuse */
+:root { --radius: 14px; }  /* add this if it's not already present */
+
+/* Wrap from layout */
 .md-cards {
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 24px var(--pad);
 }
 
-/* Headings spacing */
+/* Keep headings clean */
 .md-cards > h1 { margin: 0 0 10px; color: var(--primary); }
-.md-cards > h2, .md-cards > h3 {
-  margin: 18px 0 8px;
-  color: var(--primary);
-}
+.md-cards > h2, .md-cards > h3 { margin: 18px 0 8px; color: var(--primary); }
 
-/* Core “card” look for typical Markdown blocks */
+/* Card look for common Markdown blocks */
 .md-cards > p,
 .md-cards > ul,
 .md-cards > ol,
@@ -107,21 +107,16 @@ h1,h2,h3{color:var(--primary);margin:0 0 8px}
   margin: 16px 0;
 }
 
-/* Lists: tighten inner spacing a touch */
+/* Lists spacing */
 .md-cards > ul, .md-cards > ol { padding-left: 28px; }
 
-/* Blockquote flair */
+/* Blockquote accent */
 .md-cards > blockquote {
   border-left: 4px solid var(--accent);
   padding-left: 14px;
-  color: var(--text);
-  background: #ffffff;
 }
 
-/* Code/pre overflow */
-.md-cards > pre { overflow: auto; }
-
-/* Tables: basic tidy look */
+/* Tables tidy */
 .md-cards > table { width: 100%; border-collapse: collapse; }
 .md-cards > table th, .md-cards > table td {
   border: 1px solid #e5e7eb;
@@ -133,17 +128,3 @@ h1,h2,h3{color:var(--primary);margin:0 0 8px}
 .md-cards a { color: var(--accent); text-decoration: none; }
 .md-cards a:hover { text-decoration: underline; }
 
-/* If you ever need to turn OFF auto-cards for a page:
-   change the wrapper class in the layout to .md-plain and uncomment below
-*/
-/*
-.md-plain > p,
-.md-plain > ul,
-.md-plain > ol,
-.md-plain > blockquote,
-.md-plain > pre,
-.md-plain > table,
-.md-plain > iframe {
-  background: transparent; border: 0; box-shadow: none; padding: 0; margin: 10px 0;
-}
-*/
