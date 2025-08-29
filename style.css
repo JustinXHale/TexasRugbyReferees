@@ -1,46 +1,181 @@
-/* ====== Tighter, GitHub-style drawer spacing ====== */
+/* ============================================================
+   TRRA Styles — Clean build w/ Compact Drawer (mobile-first)
+   ============================================================ */
 
-/* 1) kill any default margins that <details> adds */
-.drawer .accordion details { margin: 0; }
+/* ---- Theme tokens ---- */
+:root{
+  --bg:#f8fafc; --text:#1e293b; --primary:#0f172a; --muted:#64748b; --accent:#2563eb;
+  --maxw:1100px; --pad:16px; --radius:14px;
 
-/* 2) shrink the gaps between sections */
-.drawer .accordion { gap: 2px; }            /* was 6–10px */
-
-/* 3) make each top-level row a fixed height and vertically centered */
-.drawer .accordion summary{
-  padding: 0 12px;                          /* side padding only */
-  height: 44px;                             /* row height like GitHub */
-  display: flex;
-  align-items: center;                      /* centers the text vertically */
-  border-radius: 8px;                       /* optional, keep or remove */
+  /* Drawer tuning (easy to tweak) */
+  --mnu-pad:12px;         /* inner horizontal padding per row */
+  --mnu-gap:6px;          /* gap between sections */
+  --mnu-row:6px;          /* vertical padding inside link rows */
+  --mnu-radius:14px;
+  --mnu-border:#e5e7eb;
+  --mnu-bg:#ffffff;
+  --mnu-fg:#1e293b;
+  --mnu-muted:#64748b;
+  --mnu-accent:#0f172a;
 }
 
-/* 4) optional: lighten the weight so it feels less “bulky” */
-.drawer .accordion summary { font-weight: 600; }  /* was 700/900 */
-
-/* 5) sublink lists: smaller vertical padding and tighter line-height */
-.drawer .accordion .links { padding: 4px 0; }     /* top/bottom padding around list */
-.drawer .accordion .links a{
-  padding: 8px 12px;                         /* link row padding */
-  line-height: 1.25;
-  border-radius: 6px;
+*{ box-sizing:border-box }
+html,body{ margin:0; padding:0 }
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.6; color:var(--text); background:var(--bg);
 }
 
-/* 6) card/border look around each group — turn OFF if you want flat list */
-.drawer .accordion details {
-  border: 1px solid #e5e7eb;                 /* remove this line for no boxes */
-  border-radius: 10px;
-  background: #fff;
+/* ===== Header ===== */
+.site-header{
+  position:sticky; top:0; z-index:1000; background:var(--bg);
+  padding:14px var(--pad) 8px; text-align:center; box-shadow:0 1px 0 rgba(0,0,0,.06);
+}
+.site-title{
+  margin:0; font-weight:800; color:var(--primary);
+  font-size:clamp(1.5rem,2vw + 1rem,2.4rem);
+}
+.site-title a{ color:inherit; text-decoration:none }
+.site-subtitle{ margin:4px 0 0; color:var(--muted); font-size:.95rem }
+
+/* ===== Hamburger button (works with #nav-toggle + .hambutton) ===== */
+.hambutton{
+  position:fixed; left:var(--pad); top:14px; z-index:1100; width:40px; height:34px;
+  display:inline-flex; align-items:center; justify-content:center; border-radius:10px;
+  cursor:pointer; user-select:none; transition:background .2s;
+}
+.hambutton:hover{ background:rgba(15,23,42,.06) }
+.hambutton span{
+  display:block; width:22px; height:2px; background:var(--primary); border-radius:2px; position:relative;
+  transition:transform .2s,background .2s;
+}
+.hambutton span::before,.hambutton span::after{
+  content:""; position:absolute; left:0; width:22px; height:2px; background:var(--primary); border-radius:2px;
+  transition:transform .2s,top .2s,opacity .2s;
+}
+.hambutton span::before{ top:-7px } .hambutton span::after{ top:7px }
+#nav-toggle{ position:absolute; opacity:0; pointer-events:none }
+#nav-toggle:checked + .hambutton span{ background:transparent }
+#nav-toggle:checked + .hambutton span::before{ top:0; transform:rotate(45deg) }
+#nav-toggle:checked + .hambutton span::after{ top:0; transform:rotate(-45deg) }
+
+/* ===== Overlay ===== */
+.overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.4);
+  opacity:0; pointer-events:none; transition:opacity .2s; z-index:1050;
 }
 
-/* 7) footer stays pinned and separated cleanly */
+/* ===== Drawer (original class targets) ===== */
+.drawer{
+  position:fixed; inset:0 auto 0 0; width:clamp(260px,80vw,360px); background:#fff;
+  border-right:1px solid var(--mnu-border); border-radius:0 var(--mnu-radius) var(--mnu-radius) 0;
+  transform:translateX(-100%); transition:transform .25s; z-index:1060;
+  height:100vh; display:flex; flex-direction:column; box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+.drawer .drawer-title{ margin:0 0 8px; padding:10px var(--mnu-pad) 0; font-weight:800; color:var(--primary) }
+
+/* Scrollable menu content */
+.drawer .accordion{ flex:1; overflow:auto; -webkit-overflow-scrolling:touch; padding:0 var(--mnu-pad) }
+
+/* Section card look (set border: none; to remove outline) */
+.accordion details{
+  margin:0 0 var(--mnu-gap); border:1px solid var(--mnu-border);
+  border-radius:12px; background:#fff;
+}
+/* Top row — compact */
+.accordion summary{
+  list-style:none; cursor:pointer; user-select:none;
+  padding:0 var(--mnu-pad);
+  height:44px; display:flex; align-items:center;
+  font-weight:600; color:var(--mnu-muted); border-radius:12px;
+}
+.accordion summary::-webkit-details-marker{ display:none }
+.accordion details[open] > summary{ color:var(--mnu-accent); background:#f8fafc }
+/* Inner links */
+.accordion .links{ padding:4px 0; }
+.accordion .links a{
+  display:block; padding:8px var(--mnu-pad);
+  text-decoration:none; color:var(--mnu-fg); border-radius:8px;
+}
+.accordion .links a:hover{ background:#f1f5f9 }
+
+/* Drawer footer (pinned) */
 .drawer-footer{
-  position: sticky;
-  bottom: 0;
-  border-top: 1px solid #e5e7eb;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0, #fff 40%);
-  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  position:sticky; bottom:0; border-top:1px solid var(--mnu-border);
+  background:linear-gradient(180deg,rgba(255,255,255,0) 0,#fff 40%);
+  padding:10px var(--mnu-pad) calc(10px + env(safe-area-inset-bottom));
+  text-align:center; color:var(--mnu-muted); font-size:.9rem;
 }
 
-/* 8) small touch targets for the chevrons if you use them */
-.drawer .accordion summary::marker { content: ""; } /* hide default marker */
+/* Toggle ON */
+#nav-toggle:checked ~ .overlay{ opacity:1; pointer-events:auto }
+#nav-toggle:checked ~ .drawer{ transform:translateX(0) }
+
+/* ===== Drawer “rescue” selectors (works even if classes change) ===== */
+nav[aria-label="Sidebar"]{
+  position:fixed; inset:0 auto 0 0; width:clamp(260px,80vw,360px); background:#fff;
+  border-right:1px solid var(--mnu-border); border-radius:0 var(--mnu-radius) var(--mnu-radius) 0;
+  transform:translateX(-100%); transition:transform .25s; z-index:1060;
+  height:100vh; display:flex; flex-direction:column; box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+nav[aria-label="Sidebar"] .drawer-title{ margin:0 0 8px; padding:10px var(--mnu-pad) 0; font-weight:800; color:var(--primary) }
+nav[aria-label="Sidebar"] .accordion{ flex:1; overflow:auto; -webkit-overflow-scrolling:touch; padding:0 var(--mnu-pad) }
+nav[aria-label="Sidebar"] details{
+  margin:0 0 var(--mnu-gap); border:1px solid var(--mnu-border);
+  border-radius:12px; background:#fff;
+}
+nav[aria-label="Sidebar"] summary{
+  list-style:none; cursor:pointer; user-select:none; padding:0 var(--mnu-pad);
+  height:44px; display:flex; align-items:center; font-weight:600; color:var(--mnu-muted);
+  border-radius:12px;
+}
+nav[aria-label="Sidebar"] summary::-webkit-details-marker{ display:none }
+nav[aria-label="Sidebar"] details[open] > summary{ color:var(--mnu-accent); background:#f8fafc }
+nav[aria-label="Sidebar"] .links{ padding:4px 0 }
+nav[aria-label="Sidebar"] .links a{ display:block; padding:8px var(--mnu-pad); text-decoration:none; color:var(--mnu-fg); border-radius:8px }
+nav[aria-label="Sidebar"] .links a:hover{ background:#f1f5f9 }
+nav[aria-label="Sidebar"] .drawer-footer{
+  position:sticky; bottom:0; border-top:1px solid var(--mnu-border);
+  background:linear-gradient(180deg,rgba(255,255,255,0) 0,#fff 40%);
+  padding:10px var(--mnu-pad) calc(10px + env(safe-area-inset-bottom));
+  text-align:center; color:var(--mnu-muted); font-size:.9rem;
+}
+#nav-toggle:checked ~ nav[aria-label="Sidebar"]{ transform:translateX(0) }
+
+/* ===== Main content & site footer ===== */
+main{ max-width:var(--maxw); margin:0 auto; padding:24px var(--pad) }
+.card{
+  background:#fff; border:1px solid #e5e7eb; border-radius:var(--radius);
+  box-shadow:0 1px 4px rgba(0,0,0,.06); padding:18px; margin:16px 0;
+}
+h1,h2,h3{ color:var(--primary); margin:0 0 8px }
+.site-footer{ border-top:1px solid #e5e7eb; margin-top:24px; padding:18px var(--pad) }
+.footer-inner{
+  max-width:var(--maxw); margin:0 auto; display:flex; flex-wrap:wrap; align-items:center;
+  justify-content:center; gap:14px; color:var(--muted);
+}
+.footer-inner a{ color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:8px }
+.footer-inner a:hover{ background:rgba(15,23,42,.05); color:var(--primary) }
+.muted{ color:var(--muted) }
+
+/* ===== Markdown auto-cards (one card per section) ===== */
+.md-cards > h2, .md-cards > h3{ margin:16px 0 0 }
+.md-cards > h2, .md-cards > h3{
+  background:#fff; border:1px solid #e5e7eb; border-radius:var(--radius) var(--radius) 0 0;
+  box-shadow:0 1px 4px rgba(0,0,0,.06); padding:16px 20px;
+}
+.md-cards > h2 ~ p, .md-cards > h2 ~ ul, .md-cards > h2 ~ ol,
+.md-cards > h3 ~ p, .md-cards > h3 ~ ul, .md-cards > h3 ~ ol{
+  background:#fff; border:1px solid #e5e7eb; border-top:none;
+  box-shadow:0 1px 4px rgba(0,0,0,.06); padding:12px 20px; margin:0;
+}
+.md-cards > h2 ~ p:last-of-type, .md-cards > h2 ~ ul:last-of-type, .md-cards > h2 ~ ol:last-of-type,
+.md-cards > h3 ~ p:last-of-type, .md-cards > h3 ~ ul:last-of-type, .md-cards > h3 ~ ol:last-of-type{
+  border-radius:0 0 var(--radius) var(--radius); margin-bottom:16px;
+}
+.md-cards ul, .md-cards ol{ padding-left:32px } .md-cards li{ margin:6px 0; line-height:1.5 }
+.md-cards a{ color:#2563eb; text-decoration:underline } .md-cards a:hover{ text-decoration:none }
+
+/* ===== Hero banner ===== */
+.hero-banner{ width:100%; margin:0 0 24px }
+.hero-banner img{ width:100%; height:auto; border-radius:0; display:block }
