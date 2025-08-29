@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% if page.title %}{{ page.title }} • {% endif %}Texas Rugby Referees</title>
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <meta name="color-scheme" content="light only" />
 </head>
 <body>
 
   {% include nav.html %}
 
   <header class="site-header">
-    <h1 class="site-title">Texas Rugby Referees</h1>
+    <h1 class="site-title">
+      <a href="{{ '/' | relative_url }}">Texas Rugby Referees</a>
+    </h1>
     <p class="site-subtitle">{{ site.description }}</p>
   </header>
 
