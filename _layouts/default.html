@@ -16,7 +16,10 @@
   </header>
 
   <main>
-    {{ content }}
+    <!-- Wrap markdown in an auto-card container -->
+    <div class="md-cards">
+      {{ content }}
+    </div>
   </main>
 
   {% include footer.html %}
