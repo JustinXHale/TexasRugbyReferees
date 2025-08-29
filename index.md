@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About TRRA
+title: Texas Rugby Referees
 permalink: /
 ---
 
