@@ -1,83 +1,105 @@
-<!-- _includes/nav.html -->
-<input id="nav-toggle" type="checkbox" hidden>
+<!-- nav.html — compact mobile drawer -->
 
-<label for="nav-toggle" class="hambutton" aria-label="Open menu">
+<!-- 1) hidden toggle -->
+<input id="mnu-toggle" type="checkbox" hidden>
+
+<!-- 2) hamburger button -->
+<label for="mnu-toggle" class="mnu-btn" aria-label="Open menu">
   <span></span>
 </label>
 
-<label for="nav-toggle" class="overlay" aria-hidden="true"></label>
+<!-- 3) screen overlay -->
+<label for="mnu-toggle" class="mnu-overlay" aria-hidden="true"></label>
 
-<nav class="drawer" aria-label="Sidebar">
-  <div class="drawer-title">Texas Rugby Referees</div>
-
-  <div class="accordion">
-
-    <!-- About -->
-    <details>
-      <summary>About</summary>
-      <div class="links">
-        <a href="{{ site.baseurl }}/about/about.html">About TRRA</a>
-        <a href="{{ site.baseurl }}/about/leadership.html">Leadership</a>
-      </div>
-    </details>
-
-    <!-- Forms -->
-    <details>
-      <summary>Forms</summary>
-      <div class="links">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScid_5JTliFbtBzvk6rQNKhCiYGh8WgElowNd3PdlB1zdnxLA/viewform?usp=sharing&ouid=111103921737220669220" target="_blank" rel="noopener">Card Report Form</a>
-        <a href="#" target="_blank" rel="noopener">CMO Report Form</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScid_5JTliFbtBzvk6rQNKhCiYGh8WgElowNd3PdlB1zdnxLA/viewform?usp=sharing&ouid=111103921737220669220" target="_blank" rel="noopener">Referee Match Report</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScid_5JTliFbtBzvk6rQNKhCiYGh8WgElowNd3PdlB1zdnxLA/viewform?usp=sharing&ouid=111103921737220669220" target="_blank" rel="noopener">Team Post-Match Feedback (Teams)</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScid_5JTliFbtBzvk6rQNKhCiYGh8WgElowNd3PdlB1zdnxLA/viewform?usp=sharing&ouid=111103921737220669220" target="_blank" rel="noopener">Request a Referee (Teams)</a>
-      </div>
-    </details>
-
-    <!-- Matches -->
-    <details>
-      <summary>Match Information</summary>
-      <div class="links">
-        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false" target="_blank" rel="noopener">2025 Conference Schedule</a>
-        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false#gid=1595106656" target="_blank" rel="noopener">2025 Mens Conference Schedule</a>
-         <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false#gid=1609972183" target="_blank" rel="noopener">2025 Womens Conference Schedule</a>
-        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false#gid=719100586" target="_blank" rel="noopener">Mens Team Contacts</a>
-        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false#gid=1347961403" target="_blank" rel="noopener">Womens Team Schedule</a>
-        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false#gid=1393530416" target="_blank" rel="noopener">Referee Contacts</a>
-      </div>
-    </details>
-
-    <!-- Resources -->
-    <details>
-      <summary>Referee Resources</summary>
-      <div class="links">
-        <a href="https://d26phqdbpt0w91.cloudfront.net/NonVideo/4abafdf7-930a-44e7-94ad-6b4fd248f81a.pdf" target="_blank" rel="noopener">2025 Game Management Guidelines</a>
-        <a href="https://d26phqdbpt0w91.cloudfront.net/NonVideo/434b1a33-5f06-4b42-836e-59e8d2e77cd5.pdf" target="_blank" rel="noopener">Tackle Height Law One Pager</a>
-        <a href="https://d26phqdbpt0w91.cloudfront.net/NonVideo/3b339bb5-b376-44f1-ace6-49f112d751c7.pdf" target="_blank" rel="noopener">In-goal Permutations (GLDO)</a>
-      </div>
-    </details>
-
-    <!-- Contact -->
-    <details>
-      <summary>Contact</summary>
-      <div class="links">
-        <a href="{{ site.baseurl }}/about/contact.html">Contact TRRA</a>
-      </div>
-    </details>
-
-    <!-- Social -->
-    <details>
-      <summary>Social</summary>
-      <div class="links">
-        <a href="{{ site.baseurl }}/social/join-whatsapp.html">WhatsApp Community</a>
-        <a href="https://www.instagram.com/texasrugbyref/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.facebook.com/trrareferee" target="_blank" rel="noopener">Facebook</a>
-        <a href="{{ site.baseurl }}/social/blog.html">Referee Stories</a>
-      </div>
-    </details>
+<!-- 4) drawer -->
+<nav class="mnu-drawer" aria-label="Site">
+  <div class="mnu-top">
+    <div class="mnu-title">Texas Rugby Referees</div>
+    <label for="mnu-toggle" class="mnu-close" aria-label="Close menu">✕</label>
   </div>
 
-  <div class="drawer-footer">
-    Texas Rugby Referee Association (TRRA)
-    <div class="drawer-credit">Created &amp; Managed by Justin X. Hale</div>
+  <!-- SCROLLABLE CONTENT -->
+  <div class="mnu-body">
+
+    <details class="mnu-sec">
+      <summary>About</summary>
+      <div class="mnu-links">
+        <a href="/about/about.html">About TRRA</a>
+        <a href="/about/leadership.html">Leadership</a>
+        <a href="/about/bylaws.html">Bylaws</a>
+      </div>
+    </details>
+
+    <details class="mnu-sec">
+      <summary>Forms</summary>
+      <div class="mnu-links">
+        <a href="/forms/card-report.html">Card Report</a>
+        <a href="/forms/cmo-report.html">CMO Report</a>
+        <a href="/forms/referee-report.html">Referee Match Report</a>
+        <a href="/forms/team-feedback.html">Team Feedback</a>
+        <a href="/forms/request-referee.html">Request a Referee</a>
+      </div>
+    </details>
+
+    <details class="mnu-sec">
+      <summary>Match Information</summary>
+      <div class="mnu-links">
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false" target="_blank" rel="noopener">2025 Conference Schedule</a>
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false#gid=1595106656" target="_blank" rel="noopener">Men’s Conference</a>
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false#gid=1609972183" target="_blank" rel="noopener">Women’s Conference</a>
+      </div>
+    </details>
+
+    <details class="mnu-sec">
+      <summary>Referee Resources</summary>
+      <div class="mnu-links">
+        <a href="/matches/referees.html">Referee Contacts</a>
+        <a href="/about/join-whatsapp.html">WhatsApp Community</a>
+      </div>
+    </details>
+
+    <details class="mnu-sec">
+      <summary>Contact</summary>
+      <div class="mnu-links">
+        <a href="/about/contact.html">Contact the Assignor</a>
+      </div>
+    </details>
+
+    <details class="mnu-sec">
+      <summary>Social</summary>
+      <div class="mnu-links">
+        <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
+        <a href="/social/blog.html">Referee Stories</a>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- PINNED FOOTER -->
+  <div class="mnu-foot">
+    <div>Texas Rugby Referee Association (TRRA)</div>
+    <div class="mnu-credit">Created &amp; Managed by Justin X. Hale</div>
   </div>
 </nav>
+
+<script>
+  // OPTIONAL: close the drawer when any link is tapped
+  (function () {
+    var box = document.getElementById('mnu-toggle');
+    document.querySelectorAll('.mnu-drawer a').forEach(function(a){
+      a.addEventListener('click', function(){ box.checked = false; });
+    });
+
+    // OPTIONAL (for GitHub Pages subfolder): rewrite absolute links to include repo base
+    try {
+      var parts = location.pathname.split('/').filter(Boolean);
+      var repo  = parts[0] || '';
+      if (repo) {
+        document.querySelectorAll('.mnu-drawer a[href^="/"]').forEach(function(a){
+          a.setAttribute('href', '/' + repo + '/' + a.getAttribute('href').replace(/^\//,''));
+        });
+      }
+    } catch (e) {}
+  })();
+</script>
