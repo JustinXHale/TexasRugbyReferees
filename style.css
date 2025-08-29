@@ -225,6 +225,7 @@ body > input#nav-toggle:checked ~ label.overlay{ opacity:1; pointer-events:auto;
   margin: 0 0 6px;
   color: var(--muted);
   font-weight: 600;
+  font-size: 1.25em;
 }
 
 @media (min-width: 720px) {
