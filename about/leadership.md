@@ -115,7 +115,7 @@ Regional reps serve as local contacts for referees and teams. They support match
     <img class="leader-photo" src="{{ '/images/placeholder-avatar.png' | relative_url }}" alt="Lonestar Conference Appointer">
     <div class="leader-meta">
       <h3>Justin X. Hale</h3>
-      <p class="leader-role"Lonestar Conference Appointer</p>
+      <p class="leader-role">Lonestar Conference Appointer</p>
       <p>
         <a href="mailto:justinxhale@gmail.com">justinxhale@gmail.com</a><br>
         <a href="tel:+1 (979) 703-0894">+1 (979) 703-0894</a>
