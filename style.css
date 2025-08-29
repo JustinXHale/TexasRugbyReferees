@@ -98,3 +98,112 @@ body{
   width:clamp(260px,80vw,360px);
   background:var(--mnu-bg); color:var(--mnu-fg);
   border-right:1px solid var(--m
+
+/* ============== Compact Drawer (GitHub-ish) ============== */
+:root{
+  --mnu-pad: 16px;        /* side padding */
+  --mnu-gap: 0;           /* gap between sections (we use borders instead) */
+  --mnu-row: 10px;        /* vertical padding per row (controls height) */
+  --mnu-border: #e5e7eb;
+  --mnu-bg: #fff;
+  --mnu-fg: #1e293b;
+  --mnu-accent: #0f172a;
+}
+
+/* Hamburger */
+.mnu-btn{
+  position:fixed; left:16px; top:14px; z-index:1100;
+  width:40px; height:34px; display:inline-flex; align-items:center; justify-content:center;
+  border-radius:10px; cursor:pointer; user-select:none;
+}
+.mnu-btn:hover{ background:rgba(15,23,42,.06) }
+.mnu-btn span{
+  display:block; width:22px; height:2px; background:var(--mnu-accent); border-radius:2px; position:relative;
+}
+.mnu-btn span::before,.mnu-btn span::after{
+  content:""; position:absolute; left:0; width:22px; height:2px; background:var(--mnu-accent); border-radius:2px;
+}
+.mnu-btn span::before{ top:-7px } .mnu-btn span::after{ top:7px }
+
+/* Overlay */
+.mnu-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.45);
+  opacity:0; pointer-events:none; transition:opacity .2s; z-index:1050;
+}
+
+/* Drawer shell */
+.mnu-drawer{
+  position:fixed; inset:0 auto 0 0; width:clamp(260px,80vw,360px);
+  background:var(--mnu-bg); color:var(--mnu-fg);
+  border-right:1px solid var(--mnu-border);
+  transform:translateX(-100%); transition:transform .25s; z-index:1060;
+  height:100vh; display:flex; flex-direction:column;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+/* Top bar */
+.mnu-top{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px var(--mnu-pad); border-bottom:1px solid var(--mnu-border);
+}
+.mnu-title{ font-weight:800; color:var(--mnu-accent) }
+.mnu-close{ cursor:pointer; padding:6px 8px; border-radius:8px }
+.mnu-close:hover{ background:#f1f5f9 }
+
+/* Body list */
+.mnu-body{
+  flex:1; overflow:auto; -webkit-overflow-scrolling:touch;
+}
+
+/* Sections – flattened (no boxes), GH-like dividers */
+.mnu-sec{
+  border-top:1px solid var(--mnu-border);
+  margin:0;
+}
+.mnu-sec:first-child{ border-top:none }
+
+/* Row (summary) height/spacing */
+.mnu-sec > summary{
+  list-style:none; cursor:pointer; user-select:none;
+  padding: var(--mnu-row) var(--mnu-pad);
+  font-weight:600; color:var(--mnu-fg);
+  position:relative;
+}
+.mnu-sec > summary::-webkit-details-marker{ display:none } /* hide triangle */
+.mnu-sec > summary:hover{ background:#f6f8fa }
+
+/* Optional tiny chevron (right) */
+.mnu-sec > summary::after{
+  content:""; position:absolute; right:12px; top:50%; width:6px; height:6px;
+  border-right:2px solid #94a3b8; border-bottom:2px solid #94a3b8;
+  transform: translateY(-50%) rotate(-45deg);
+}
+.mnu-sec[open] > summary::after{
+  transform: translateY(-50%) rotate(45deg); border-color:var(--mnu-accent);
+}
+
+/* Sub-links */
+.mnu-links{ border-top:1px solid var(--mnu-border) }
+.mnu-links a{
+  display:block; padding:8px calc(var(--mnu-pad) + 12px);
+  text-decoration:none; color:var(--mnu-fg);
+}
+.mnu-links a:hover{ background:#f6f8fa }
+
+/* Footer pinned */
+.mnu-foot{
+  position:sticky; bottom:0; border-top:1px solid var(--mnu-border);
+  background:linear-gradient(180deg,rgba(255,255,255,0) 0,#fff 40%);
+  padding:10px var(--mnu-pad) calc(10px + env(safe-area-inset-bottom));
+  text-align:center; color:#64748b; font-size:.9rem;
+}
+.mnu-credit{ margin-top:2px }
+
+/* Open/close interactions */
+#mnu-toggle:checked ~ .mnu-overlay{ opacity:1; pointer-events:auto }
+#mnu-toggle:checked ~ .mnu-drawer{ transform:translateX(0) }
+
+/* Turn hamburger into X while open */
+#mnu-toggle:checked + .mnu-btn span{ background:transparent }
+#mnu-toggle:checked + .mnu-btn span::before{ top:0; transform:rotate(45deg) }
+#mnu-toggle:checked + .mnu-btn span::after{ top:0; transform:rotate(-45deg) }
