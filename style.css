@@ -152,3 +152,15 @@ h1,h2,h3{color:var(--primary);margin:0 0 8px}
 /* Optional: improve link appearance in cards */
 .md-cards a { color:#2563eb; text-decoration:underline }
 .md-cards a:hover { text-decoration:none }
+
+/* Hero banner */
+.hero-banner {
+  width: 100%;
+  margin: 0 0 24px;
+}
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 0; /* square edges for full-width */
+  display: block;
+}
