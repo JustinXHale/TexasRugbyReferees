@@ -74,14 +74,14 @@ body {
 .accordion details { border-radius:12px }
 .accordion summary {
   list-style:none; cursor:pointer; font-weight:700; color:var(--muted);
-  padding:6px 12px; border-radius:12px;
+  padding:1px 12px; border-radius:12px;
 }
 .accordion summary::-webkit-details-marker { display:none }
 .accordion summary:hover { background:#f1f5f9 }
 .accordion details[open] summary { background:#eef2ff; color:var(--primary) }
 .accordion .links { padding:6px }
 .accordion .links a {
-  display:block; padding:10px 12px; border-radius:10px; text-decoration:none; color:var(--text);
+  display:block; padding:13x 12px; border-radius:10px; text-decoration:none; color:var(--text);
 }
 .accordion .links a:hover { background:#f1f5f9; color:var(--primary) }
 
