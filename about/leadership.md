@@ -42,7 +42,7 @@ Our leadership team ensures referees are supported both on and off the field, he
     </div>
   </div>
 
-      <!-- Leader card -->
+  <!-- Leader card -->
   <div class="card leader-card">
     <img class="leader-photo" src="{{ '/images/placeholder-avatar.png' | relative_url }}" alt="Secretary">
     <div class="leader-meta">
@@ -59,8 +59,6 @@ Our leadership team ensures referees are supported both on and off the field, he
 ## Regional Represenatives
 
 Regional reps serve as local contacts for referees and teams. They support match assignments, referee welfare, and act as liaisons between the membership and the executive committee.
-
-<div class="leaders">
 
   <!-- Leader card -->
   <div class="card leader-card">
@@ -104,8 +102,6 @@ Regional reps serve as local contacts for referees and teams. They support match
 ---
 
 ## Extended Leadership
-
-<div class="leaders">
 
   <!-- Leader card -->
   <div class="card leader-card">
