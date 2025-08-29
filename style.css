@@ -1,158 +1,211 @@
 /* ============================================================
-   TRRA Styles — Mobile-first Hamburger Sidebar with Accordion
+   TRRA Styles — Clean build w/ new Compact Drawer (mnu-*)
    ============================================================ */
-:root {
-  --bg:#f8fafc; --text:#1e293b; --primary:#0f172a; --muted:#64748b; --accent:#2563eb;
-  --maxw:1100px; --pad:16px; --radius:14px;
+
+/* ---- Theme tokens ---- */
+:root{
+  --bg:#f8fafc;            /* page background */
+  --text:#1e293b;          /* body text */
+  --primary:#0f172a;       /* headings / brand */
+  --muted:#64748b;         /* secondary text */
+  --accent:#2563eb;        /* link color */
+
+  --maxw:1100px;
+  --pad:16px;
+  --radius:14px;
+
+  /* Drawer tuning (easy to tweak) */
+  --mnu-pad:12px;          /* inner horizontal padding for rows */
+  --mnu-gap:6px;           /* gap between sections */
+  --mnu-row:6px;           /* vertical padding per row */
+  --mnu-radius:14px;
+  --mnu-border:#e5e7eb;
+  --mnu-bg:#ffffff;
+  --mnu-fg:#1e293b;
+  --mnu-muted:#64748b;
+  --mnu-accent:#0f172a;
 }
-* { box-sizing:border-box }
-html,body { margin:0; padding:0 }
-body {
+
+*{ box-sizing:border-box }
+html,body{ margin:0; padding:0 }
+body{
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   line-height:1.6; color:var(--text); background:var(--bg);
 }
 
-/* ===== Header (title + subtitle) ===== */
-.site-header {
+/* ============================================================
+   Header
+   ============================================================ */
+.site-header{
   position:sticky; top:0; z-index:1000; background:var(--bg);
   padding:14px var(--pad) 8px; text-align:center; box-shadow:0 1px 0 rgba(0,0,0,.06);
 }
-.site-title {
+.site-title{
   margin:0; font-weight:800; color:var(--primary);
   font-size:clamp(1.5rem,2vw + 1rem,2.4rem);
 }
-.site-subtitle { margin:4px 0 0; color:var(--muted); font-size:.95rem }
+.site-title a{ color:inherit; text-decoration:none }
+.site-subtitle{ margin:4px 0 0; color:var(--muted); font-size:.95rem }
 
-/* ===== Hamburger button ===== */
-.hambutton {
-  position:fixed; left:var(--pad); top:14px; z-index:1100; width:40px; height:34px;
-  display:inline-flex; align-items:center; justify-content:center; border-radius:10px;
-  cursor:pointer; user-select:none; transition:background .2s;
-}
-.hambutton:hover { background:rgba(15,23,42,.06) }
-.hambutton span {
-  display:block; width:22px; height:2px; background:var(--primary); border-radius:2px; position:relative;
-  transition:transform .2s,background .2s;
-}
-.hambutton span::before,
-.hambutton span::after {
-  content:""; position:absolute; left:0; width:22px; height:2px; background:var(--primary); border-radius:2px;
-  transition:transform .2s,top .2s,opacity .2s;
-}
-.hambutton span::before { top:-7px }
-.hambutton span::after { top:7px }
+/* ============================================================
+   NEW Compact Mobile Drawer (mnu-*)
+   Markup uses: #mnu-toggle, .mnu-btn, .mnu-overlay, .mnu-drawer, etc.
+   ============================================================ */
 
-/* Hidden checkbox toggler */
-#nav-toggle { position:absolute; opacity:0; pointer-events:none }
-#nav-toggle:checked + .hambutton span { background:transparent }
-#nav-toggle:checked + .hambutton span::before { top:0; transform:rotate(45deg) }
-#nav-toggle:checked + .hambutton span::after { top:0; transform:rotate(-45deg) }
+/* Hidden checkbox */
+#mnu-toggle{ position:absolute; opacity:0; pointer-events:none }
 
-/* ===== Drawer + overlay ===== */
-.overlay {
+/* Hamburger button */
+.mnu-btn{
+  position:fixed; left:var(--pad); top:14px; z-index:1100;
+  width:40px; height:34px; display:inline-flex; align-items:center; justify-content:center;
+  border-radius:10px; cursor:pointer; user-select:none; transition:background .2s;
+}
+.mnu-btn:hover{ background:rgba(15,23,42,.06) }
+.mnu-btn span,
+.mnu-btn span::before,
+.mnu-btn span::after{
+  content:""; display:block; width:22px; height:2px; background:var(--mnu-accent); border-radius:2px; position:relative;
+}
+.mnu-btn span::before{ position:absolute; top:-7px; left:0 }
+.mnu-btn span::after{ position:absolute; top:7px; left:0 }
+
+/* Turn hamburger into X when open */
+#mnu-toggle:checked + .mnu-btn span{ background:transparent }
+#mnu-toggle:checked + .mnu-btn span::before{ top:0; transform:rotate(45deg) }
+#mnu-toggle:checked + .mnu-btn span::after{ top:0; transform:rotate(-45deg) }
+
+/* Overlay */
+.mnu-overlay{
   position:fixed; inset:0; background:rgba(0,0,0,.4);
   opacity:0; pointer-events:none; transition:opacity .2s; z-index:1050;
 }
-.drawer {
-  position:fixed; inset:0 auto 0 0; width:clamp(260px,80vw,360px); background:#fff;
-  border-right:1px solid #e5e7eb; border-radius:0 var(--radius) var(--radius) 0;
-  transform:translateX(-100%); transition:transform .25s; z-index:1060;
-  height:100vh; display:flex; flex-direction:column;
+#mnu-toggle:checked ~ .mnu-overlay{ opacity:1; pointer-events:auto }
+
+/* Drawer shell */
+.mnu-drawer{
+  position:fixed; inset:0 auto 0 0; width:clamp(260px,80vw,360px); z-index:1060;
+  background:var(--mnu-bg); color:var(--mnu-fg);
+  border-right:1px solid var(--mnu-border);
+  border-radius:0 var(--mnu-radius) var(--mnu-radius) 0;
+  transform:translateX(-100%); transition:transform .25s;
+  display:flex; flex-direction:column; height:100vh;
   box-shadow:0 10px 30px rgba(0,0,0,.12);
 }
-.drawer .drawer-title {
-  margin:0 0 12px; padding:0 4px; font-weight:800; color:var(--primary); font-size:1.2rem;
+#mnu-toggle:checked ~ .mnu-drawer{ transform:translateX(0) }
+
+/* Top bar */
+.mnu-top{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px var(--mnu-pad); border-bottom:1px solid var(--mnu-border);
+}
+.mnu-title{ font-weight:800; color:var(--mnu-accent) }
+.mnu-close{ cursor:pointer; padding:6px 8px; border-radius:10px }
+.mnu-close:hover{ background:rgba(15,23,42,.06) }
+
+/* Scrollable body */
+.mnu-body{
+  flex:1; overflow:auto; -webkit-overflow-scrolling:touch;
+  padding: var(--mnu-gap);
+  display:grid; gap: var(--mnu-gap);
 }
 
-/* Scrollable menu content */
-.drawer .accordion {
-  flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:0 4px;
+/* Section (details) */
+.mnu-sec{
+  margin:0; border:1px solid var(--mnu-border);
+  border-radius:12px; background:#fff;
+}
+.mnu-sec > summary{
+  list-style:none; cursor:pointer; user-select:none;
+  padding: calc(var(--mnu-row) + 2px) var(--mnu-pad);
+  font-weight:700; color:var(--mnu-muted);
+  border-radius:12px; position:relative;
+}
+.mnu-sec > summary::-webkit-details-marker{ display:none }
+.mnu-sec[open] > summary{ color:var(--mnu-accent); background:#f8fafc }
+
+/* Chevron */
+.mnu-sec > summary::after{
+  content:""; position:absolute; right:12px; top:50%; width:8px; height:8px;
+  border-right:2px solid var(--mnu-muted); border-bottom:2px solid var(--mnu-muted);
+  transform: translateY(-50%) rotate(-45deg); transition: transform .18s, border-color .18s;
+}
+.mnu-sec[open] > summary::after{
+  transform: translateY(-50%) rotate(45deg); border-color:var(--mnu-accent);
 }
 
-/* Accordion groups */
-.accordion { display:grid; gap:10px }
-.accordion details { border-radius:12px }
-.accordion summary {
-  list-style:none; cursor:pointer; font-weight:900; color:var(--muted); /* thickness of main menu item */
-  padding:6px 12px; border-radius:12px;
+/* Links inside a section */
+.mnu-links{
+  padding: var(--mnu-row) 0;
+  border-top:1px solid var(--mnu-border);
 }
-.accordion summary::-webkit-details-marker { display:none }
-.accordion summary:hover { background:#f1f5f9 }
-.accordion details[open] summary { background:#eef2ff; color:var(--primary) }
-.accordion .links { padding:6px }
-.accordion .links a {
-  display:block; padding:6px 12px; border-radius:10px; text-decoration:none; color:var(--text);
+.mnu-links a{
+  display:block; padding: var(--mnu-row) var(--mnu-pad);
+  text-decoration:none; color:var(--mnu-fg); border-radius:8px;
 }
-.accordion .links a:hover { background:#f1f5f9; color:var(--primary) }
+.mnu-links a:hover{ background:#f1f5f9 }
 
-/* Bottom footer inside drawer (pinned) */
-.drawer-footer {
-  position:sticky; bottom:0; border-top:1px solid #e5e7eb;
-  background:#fff; text-align:center; color:var(--muted); font-size:.9rem;
-  padding:12px 6px calc(12px + env(safe-area-inset-bottom));
+/* Pinned footer inside drawer */
+.mnu-foot{
+  position:sticky; bottom:0;
+  border-top:1px solid var(--mnu-border);
+  background:linear-gradient(180deg, rgba(255,255,255,0) 0, #fff 40%);
+  padding:10px var(--mnu-pad) calc(10px + env(safe-area-inset-bottom));
+  text-align:center; color:var(--mnu-muted); font-size:.9rem;
 }
 
-/* Toggle ON */
-#nav-toggle:checked ~ .overlay { opacity:1; pointer-events:auto }
-#nav-toggle:checked ~ .drawer { transform:translateX(0) }
-
-/* ===== Main content & footer ===== */
-main { max-width:var(--maxw); margin:0 auto; padding:24px var(--pad) }
-.card {
+/* ============================================================
+   Main content & footer
+   ============================================================ */
+main{ max-width:var(--maxw); margin:0 auto; padding:24px var(--pad) }
+.card{
   background:#fff; border:1px solid #e5e7eb; border-radius:var(--radius);
   box-shadow:0 1px 4px rgba(0,0,0,.06); padding:18px; margin:16px 0;
 }
-h1,h2,h3 { color:var(--primary); margin:0 0 8px }
-.site-footer { border-top:1px solid #e5e7eb; margin-top:24px; padding:18px var(--pad) }
-.footer-inner {
+h1,h2,h3{ color:var(--primary); margin:0 0 8px }
+.site-footer{ border-top:1px solid #e5e7eb; margin-top:24px; padding:18px var(--pad) }
+.footer-inner{
   max-width:var(--maxw); margin:0 auto; display:flex; flex-wrap:wrap; align-items:center;
   justify-content:center; gap:14px; color:var(--muted);
 }
-.footer-inner a {
-  color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:8px;
-}
-.footer-inner a:hover { background:rgba(15,23,42,.05); color:var(--primary) }
-.muted { color:var(--muted) }
+.footer-inner a{ color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:8px }
+.footer-inner a:hover{ background:rgba(15,23,42,.05); color:var(--primary) }
+.muted{ color:var(--muted) }
 
 /* ============================================================
-   MARKDOWN AUTO-CARDS (one card per section)
+   Markdown Auto-Cards (one card per section)
    ============================================================ */
-.md-cards > h2, .md-cards > h3 { margin:16px 0 0 }
-
+.md-cards > h2, .md-cards > h3{ margin:16px 0 0 }
 .md-cards > h2,
-.md-cards > h3 {
+.md-cards > h3{
   background:#fff; border:1px solid #e5e7eb; border-radius:var(--radius) var(--radius) 0 0;
-  box-shadow:0 1px 4px rgba(0,0,0,.06); padding:16px 20px; /* card header distance (#) */
+  box-shadow:0 1px 4px rgba(0,0,0,.06); padding:16px 20px;
 }
-
 .md-cards > h2 ~ p,
 .md-cards > h2 ~ ul,
 .md-cards > h2 ~ ol,
 .md-cards > h3 ~ p,
 .md-cards > h3 ~ ul,
-.md-cards > h3 ~ ol {
+.md-cards > h3 ~ ol{
   background:#fff; border:1px solid #e5e7eb; border-top:none;
-  box-shadow:0 1px 4px rgba(0,0,0,.06); padding:12px 20px; margin:0; /* content distance (<p>) */
+  box-shadow:0 1px 4px rgba(0,0,0,.06); padding:12px 20px; margin:0;
 }
-
 .md-cards > h2 ~ p:last-of-type,
 .md-cards > h2 ~ ul:last-of-type,
 .md-cards > h2 ~ ol:last-of-type,
 .md-cards > h3 ~ p:last-of-type,
 .md-cards > h3 ~ ul:last-of-type,
-.md-cards > h3 ~ ol:last-of-type {
+.md-cards > h3 ~ ol:last-of-type{
   border-radius:0 0 var(--radius) var(--radius);
   margin-bottom:16px;
 }
+.md-cards ul, .md-cards ol{ padding-left:32px }
+.md-cards li{ margin:6px 0; line-height:1.5 }
+.md-cards a{ color:var(--accent); text-decoration:underline }
+.md-cards a:hover{ text-decoration:none }
 
-.md-cards ul, .md-cards ol { padding-left:32px }
-.md-cards li { margin:6px 0; line-height:1.5 }
-
-.md-cards a { color:#2563eb; text-decoration:underline }
-.md-cards a:hover { text-decoration:none }
-
-/* ===== Hero banner ===== */
-.hero-banner { width:100%; margin:0 0 24px; }
-.hero-banner img {
-  width:100%; height:auto; border-radius:0; display:block;
-}
+/* ============================================================
+   Hero banner (optional)
+   ============================================================ */
+.hero-banner{ width:100%; margin:0 0 24px }
+.hero-banner img{ width:100%; height:auto; border-radius:0; display:block }
