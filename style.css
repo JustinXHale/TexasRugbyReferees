@@ -48,14 +48,29 @@ body{
 .overlay{
   position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .2s;z-index:1050
 }
+
+/* FLEX drawer so footer is pinned to bottom */
 .drawer{
   position:fixed;inset:0 auto 0 0;width:clamp(260px,80vw,360px);background:#fff;
   border-right:1px solid #e5e7eb;border-radius:0 var(--radius) var(--radius) 0;
   transform:translateX(-100%);transition:transform .25s;z-index:1060;
-  height:100vh;padding:60px 12px 64px;overflow-y:auto;-webkit-overflow-scrolling:touch;
+
+  display:flex;                /* NEW */
+  flex-direction:column;       /* NEW */
+  height:100vh;                /* NEW */
   box-shadow:0 10px 30px rgba(0,0,0,.12)
 }
-.drawer .drawer-title{margin:0 0 12px;padding:0 4px;font-weight:800;color:var(--primary);font-size:1.2rem}
+
+/* Optional drawer title styling */
+.drawer .drawer-title{margin:60px 12px 12px;padding:0 4px;font-weight:800;color:var(--primary);font-size:1.2rem}
+
+/* Scrollable menu area */
+.drawer .accordion{
+  flex:1;                      /* NEW: take remaining height */
+  overflow-y:auto;             /* NEW: scroll if long */
+  padding:0 12px 12px;         /* NEW: internal padding (top space comes from title/hamburger) */
+  -webkit-overflow-scrolling:touch;
+}
 
 /* Accordion groups */
 .accordion{display:grid;gap:10px}
@@ -73,11 +88,11 @@ body{
 }
 .accordion .links a:hover{background:#f1f5f9;color:var(--primary)}
 
-/* Bottom label inside drawer */
+/* Footer is now pinned (no sticky needed) */
 .drawer-footer{
-  position:sticky;bottom:0;margin-top:16px;padding:12px 6px 8px;
-  background:linear-gradient(180deg,rgba(255,255,255,0) 0%, #fff 40%);
-  text-align:center;color:var(--muted);font-size:.9rem
+  padding:12px 8px;
+  text-align:center;color:var(--muted);font-size:.9rem;
+  border-top:1px solid #e5e7eb;background:#fff
 }
 
 /* Toggle ON */
@@ -124,15 +139,9 @@ h1,h2,h3{color:var(--primary);margin:0 0 8px}
 .md-cards > h3 ~ p,
 .md-cards > h3 ~ ul,
 .md-cards > h3 ~ ol {
-  background:#fff;border:1px solid #e5e7eb;border-top:none; /* merge with heading card */
+  background:#fff;border:1px solid #e5e7eb;border-top:none;
   box-shadow:0 1px 4px rgba(0,0,0,.06);padding:12px 20px;margin:0
 }
-
-/* Stop including once we hit another section heading */
-.md-cards > h2 ~ h2,
-.md-cards > h2 ~ h3,
-.md-cards > h3 ~ h2,
-.md-cards > h3 ~ h3 { /* reset chain */ }
 
 /* Round the bottom corners ONLY on the last block before next heading */
 .md-cards > h2 ~ p:last-of-type,
@@ -161,6 +170,6 @@ h1,h2,h3{color:var(--primary);margin:0 0 8px}
 .hero-banner img {
   width: 100%;
   height: auto;
-  border-radius: 0; /* square edges for full-width */
+  border-radius: 0;
   display: block;
 }
