@@ -1,80 +1,72 @@
-<!-- Compact Drawer Nav -->
-<input id="mnu-toggle" type="checkbox" hidden>
+<!-- Hidden checkbox -->
+<input id="nav-toggle" type="checkbox" hidden>
 
-<!-- Hamburger -->
-<label for="mnu-toggle" class="mnu-btn" aria-label="Open menu">
+<!-- Hamburger button -->
+<label for="nav-toggle" class="hambutton" aria-label="Open menu">
   <span></span>
 </label>
 
 <!-- Overlay -->
-<label for="mnu-toggle" class="mnu-overlay" aria-hidden="true"></label>
+<label for="nav-toggle" class="overlay" aria-hidden="true"></label>
 
 <!-- Drawer -->
-<aside class="mnu-drawer" aria-label="Sidebar">
-  <div class="mnu-top">
-    <div class="mnu-title">Texas Rugby Referees</div>
-    <!-- Close button -->
-    <label for="mnu-toggle" class="mnu-close" aria-label="Close menu">✕</label>
-  </div>
+<nav class="drawer" aria-label="Sidebar">
+  <div class="drawer-title">Texas Rugby Referees</div>
 
-  <nav class="mnu-body">
-    <details class="mnu-sec">
+  <!-- Scrollable group of sections -->
+  <div class="accordion">
+    <details>
       <summary>About</summary>
-      <div class="mnu-links">
+      <div class="links">
         <a href="{{ '/about/about.html' | relative_url }}">About TRRA</a>
         <a href="{{ '/about/leadership.html' | relative_url }}">Leadership</a>
       </div>
     </details>
 
-    <details class="mnu-sec">
+    <details>
       <summary>Forms</summary>
-      <div class="mnu-links">
-        <a href="{{ '/forms/card-report.html' | relative_url }}">Card Report</a>
-        <a href="{{ '/forms/referee-report.html' | relative_url }}">Referee Match Report</a>
-        <a href="{{ '/forms/request-referee.html' | relative_url }}">Request a Referee</a>
-        <a href="{{ '/forms/team-feedback.html' | relative_url }}">Team Feedback</a>
+      <div class="links">
+        <a href="https://docs.google.com/forms/d/e/..." target="_blank" rel="noopener">Card Report Form</a>
+        <a href="https://docs.google.com/forms/d/e/..." target="_blank" rel="noopener">Referee Match Report</a>
       </div>
     </details>
 
-    <details class="mnu-sec">
+    <details>
       <summary>Match Information</summary>
-      <div class="mnu-links">
-        <a href="https://docs.google.com/…">2025 Conference Schedule</a>
-        <a href="https://docs.google.com/…#gid=1595106656">Men’s Conference</a>
-        <a href="https://docs.google.com/…#gid=1609972183">Women’s Conference</a>
-        <a href="https://docs.google.com/…#gid=719100586">Men Team Contacts</a>
-        <a href="https://docs.google.com/…#gid=1347961403">Women Team Contacts</a>
-        <a href="https://docs.google.com/…#gid=1393530416">Referee Contacts</a>
+      <div class="links">
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false" target="_blank" rel="noopener">2025 Conference Schedule</a>
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false#gid=1595106656" target="_blank" rel="noopener">Men’s Schedule</a>
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false#gid=1609972183" target="_blank" rel="noopener">Women’s Schedule</a>
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx6_ivuqcWlNMyf4ykH8XL_GQZ164shEG7aBjchQXBpt6s3u8OWjq3YZtbYolo8WuBRfeHlO_HlOuS/pubhtml?widget=true&headers=false#gid=1393530416" target="_blank" rel="noopener">Referee Contacts</a>
       </div>
     </details>
 
-    <details class="mnu-sec">
+    <details>
       <summary>Referee Resources</summary>
-      <div class="mnu-links">
-        <a href="{{ '/resources/laws.html' | relative_url }}">World Rugby Laws</a>
-        <a href="{{ '/resources/policies.html' | relative_url }}">Policies</a>
+      <div class="links">
+        <a href="https://www.world.rugby/the-game/laws" target="_blank" rel="noopener">World Rugby Laws</a>
       </div>
     </details>
 
-    <details class="mnu-sec">
+    <details>
       <summary>Contact</summary>
-      <div class="mnu-links">
+      <div class="links">
         <a href="{{ '/about/contact.html' | relative_url }}">Contact</a>
       </div>
     </details>
 
-    <details class="mnu-sec">
+    <details>
       <summary>Social</summary>
-      <div class="mnu-links">
-        <a href="{{ '/social/join-whatsapp.html' | relative_url }}">WhatsApp Community</a>
+      <div class="links">
         <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
         <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
       </div>
     </details>
-  </nav>
-
-  <div class="mnu-foot">
-    Texas Rugby Referee Association (TRRA)
-    <div class="mnu-credit">Created &amp; Managed by Justin X. Hale</div>
   </div>
-</aside>
+
+  <!-- Footer pinned inside drawer -->
+  <div class="drawer-footer">
+    Texas Rugby Referee Association (TRRA)
+    <div>Created &amp; Managed by Justin X. Hale</div>
+  </div>
+</nav>
