@@ -211,48 +211,32 @@ h1, h2, h3 { color: var(--primary); margin: 0 0 8px; }
 .muted { color: var(--muted); }
 
 /* ============================================================
-   Auto card styling for Markdown sections
+   FIX: Headings and content inside one card
    ============================================================ */
 
-/* Headings become card headers */
+/* Wrap heading + immediate sibling(s) into one card */
 .md-cards > h2,
 .md-cards > h3 {
-  background: #fff;
+  margin: 16px 0 0;
+  padding: 16px 16px 8px;
   border: 1px solid #e5e7eb;
-  border-radius: var(--radius);
+  border-radius: var(--radius) var(--radius) 0 0;
   box-shadow: 0 1px 4px rgba(0,0,0,.06);
-  padding: 16px;
-  margin: 16px 0;
+  background: #fff;
 }
 
-/* Pull next up to 3 blocks inside the same card */
-.md-cards > h2 + :is(p, ul, ol),
-.md-cards > h3 + :is(p, ul, ol),
-.md-cards > h2 + :is(p, ul, ol) + :is(p, ul, ol),
-.md-cards > h3 + :is(p, ul, ol) + :is(p, ul, ol),
-.md-cards > h2 + :is(p, ul, ol) + :is(p, ul, ol) + :is(p, ul, ol),
-.md-cards > h3 + :is(p, ul, ol) + :is(p, ul, ol) + :is(p, ul, ol) {
-  margin-top: 8px;
-  padding-top: 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-/* Loose blocks (not under headings) also styled as cards */
-.md-cards > p,
-.md-cards > ul,
-.md-cards > ol,
-.md-cards > blockquote,
-.md-cards > pre,
-.md-cards > table,
-.md-cards > iframe {
-  background: #fff;
+/* First content block gets “attached” */
+.md-cards > h2 + p,
+.md-cards > h2 + ul,
+.md-cards > h3 + p,
+.md-cards > h3 + ul {
+  margin: 0;
+  padding: 12px 16px;
   border: 1px solid #e5e7eb;
-  border-radius: var(--radius);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: #fff;
   box-shadow: 0 1px 4px rgba(0,0,0,.06);
-  padding: 16px;
-  margin: 16px 0;
 }
 
 .md-cards > ul, .md-cards > ol { padding-left: 28px; }
