@@ -74,31 +74,12 @@ h1,h2,h3{color:var(--primary);margin:0 0 8px}
 .muted{color:var(--muted)}
 
 /* ============================================================
-   Auto "card" styling for plain Markdown content
+   Auto card styling for Markdown blocks (with heading inside)
    ============================================================ */
 
-/* Add a radius token we can reuse */
-:root { --radius: 14px; }  /* add this if it's not already present */
-
-/* Wrap from layout */
-.md-cards {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 24px var(--pad);
-}
-
-/* Keep headings clean */
-.md-cards > h1 { margin: 0 0 10px; color: var(--primary); }
-.md-cards > h2, .md-cards > h3 { margin: 18px 0 8px; color: var(--primary); }
-
-/* Card look for common Markdown blocks */
-.md-cards > p,
-.md-cards > ul,
-.md-cards > ol,
-.md-cards > blockquote,
-.md-cards > pre,
-.md-cards > table,
-.md-cards > iframe {
+/* Group each heading + its next element into one card */
+.md-cards > h2,
+.md-cards > h3 {
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: var(--radius);
@@ -107,24 +88,18 @@ h1,h2,h3{color:var(--primary);margin:0 0 8px}
   margin: 16px 0;
 }
 
-/* Lists spacing */
-.md-cards > ul, .md-cards > ol { padding-left: 28px; }
-
-/* Blockquote accent */
-.md-cards > blockquote {
-  border-left: 4px solid var(--accent);
-  padding-left: 14px;
+/* Pull next sibling into same card */
+.md-cards > h2 + p,
+.md-cards > h2 + ul,
+.md-cards > h2 + ol,
+.md-cards > h3 + p,
+.md-cards > h3 + ul,
+.md-cards > h3 + ol {
+  margin-top: 8px;
+  padding-top: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
 }
 
-/* Tables tidy */
-.md-cards > table { width: 100%; border-collapse: collapse; }
-.md-cards > table th, .md-cards > table td {
-  border: 1px solid #e5e7eb;
-  padding: 8px 10px;
-  text-align: left;
-}
-
-/* Links inside cards */
-.md-cards a { color: var(--accent); text-decoration: none; }
-.md-cards a:hover { text-decoration: underline; }
 
