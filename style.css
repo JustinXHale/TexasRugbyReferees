@@ -92,89 +92,53 @@ h1,h2,h3{color:var(--primary);margin:0 0 8px}
 .muted{color:var(--muted)}
 
 /* ============================================================
-   MARKDOWN AUTO-CARDS (multi-block)
-   Each H2/H3 starts a card; all following p/ul/ol belong to it
-   until the next H2/H3.
+   MARKDOWN AUTO-CARDS (unified card per section)
    ============================================================ */
 
-/* The card “shell” begins at the heading */
+/* Reset */
 .md-cards > h2,
-.md-cards > h3{
-  background:#fff;
-  border:1px solid #e5e7eb;
-  border-radius:var(--radius);
-  box-shadow:0 1px 4px rgba(0,0,0,.06);
-  padding:16px 20px;        /* inner left/right padding = 20 for alignment */
-  margin:16px 0 0;
+.md-cards > h3 {
+  margin: 24px 0 12px;
 }
 
-/* The content blocks are visually inside the same card */
-.md-cards > h2 ~ p,
-.md-cards > h2 ~ ul,
-.md-cards > h2 ~ ol,
-.md-cards > h3 ~ p,
-.md-cards > h3 ~ ul,
-.md-cards > h3 ~ ol{
-  background:#fff;
-  border-left:1px solid #e5e7eb;
-  border-right:1px solid #e5e7eb;
-  border-bottom:1px solid #e5e7eb;
-  box-shadow:0 1px 4px rgba(0,0,0,.06);
-  padding:0 20px 12px;      /* match heading’s horizontal padding */
-  margin:0;                 /* fuse to the heading box */
-}
-
-/* Lists: extra indent + spacing so bullets don’t hug edge */
-.md-cards > ul,
-.md-cards > ol,
-.md-cards > h2 ~ ul,
-.md-cards > h2 ~ ol,
-.md-cards > h3 ~ ul,
-.md-cards > h3 ~ ol{
-  padding-left:40px;        /* comfortable bullet indent */
-  margin:8px 0 12px;
-}
-.md-cards li{margin:6px 0; line-height:1.5}
-
-/* When a new section starts, round the bottom corners of the previous block */
+/* Wrap heading + next block into ONE card look */
 .md-cards > h2,
-.md-cards > h3{
-  /* handled naturally because the next block has borders; we only need
-     to ensure the *last* content before the next heading gets rounded. */
-}
-.md-cards > h2 ~ h2,
-.md-cards > h2 ~ h3,
-.md-cards > h3 ~ h2,
-.md-cards > h3 ~ h3{
-  /* nothing needed; the previous sibling already has borders */
-}
-
-/* Round the bottom of the *last* block in a section using a safe fallback:
-   if a heading is immediately followed by a heading (no content),
-   the heading itself keeps full rounding; otherwise give all following
-   blocks rounding — visually acceptable even with multiple blocks. */
+.md-cards > h3,
 .md-cards > h2 + p,
 .md-cards > h2 + ul,
 .md-cards > h2 + ol,
 .md-cards > h3 + p,
 .md-cards > h3 + ul,
-.md-cards > h3 + ol{
-  border-top:none;                 /* attach to heading */
+.md-cards > h3 + ol {
+  background:#fff;
+  border:1px solid #e5e7eb;
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+  margin:0;
+  padding:16px 20px;
+}
+
+/* Round the heading block on top */
+.md-cards > h2,
+.md-cards > h3 {
+  border-radius:var(--radius) var(--radius) 0 0;
+  margin-top:16px;
+}
+
+/* Following content shares the same card (bottom) */
+.md-cards > h2 + p,
+.md-cards > h2 + ul,
+.md-cards > h2 + ol,
+.md-cards > h3 + p,
+.md-cards > h3 + ul,
+.md-cards > h3 + ol {
+  border-top:none;
   border-radius:0 0 var(--radius) var(--radius);
+  margin-bottom:16px;
 }
 
-/* Loose blocks (not under a heading) still get a nice card */
-.md-cards > p:not(h2 ~ p):not(h3 ~ p),
-.md-cards > ul:not(h2 ~ ul):not(h3 ~ ul),
-.md-cards > ol:not(h2 ~ ol):not(h3 ~ ol),
-.md-cards > blockquote,
-.md-cards > pre,
-.md-cards > table,
-.md-cards > iframe{
-  background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);
-  box-shadow:0 1px 4px rgba(0,0,0,.06);padding:16px;margin:16px 0
+/* Lists: comfortable indent */
+.md-cards ul, .md-cards ol {
+  padding-left:32px;
 }
+.md-cards li { margin:6px 0; line-height:1.5 }
 
-/* Links inside markdown */
-.md-cards a{color:var(--accent);text-decoration:none}
-.md-cards a:hover{text-decoration:underline}
