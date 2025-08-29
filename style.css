@@ -102,4 +102,30 @@ h1,h2,h3{color:var(--primary);margin:0 0 8px}
   background: transparent;
 }
 
+/* --- Group heading + its first block in one card (override) --- */
+
+/* Make the heading itself the card */
+.md-cards > h2,
+.md-cards > h3 {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Pull the first content block after the heading "inside" the same card */
+.md-cards > h2 + p,
+.md-cards > h2 + ul,
+.md-cards > h2 + ol,
+.md-cards > h3 + p,
+.md-cards > h3 + ul,
+.md-cards > h3 + ol {
+  margin-top: 8px;        /* small gap under the heading */
+  padding-top: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
 
