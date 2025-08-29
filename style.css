@@ -211,7 +211,7 @@ body > input#nav-toggle:checked ~ label.overlay{ opacity:1; pointer-events:auto;
 .leader-photo {
   width: 84px;
   height: 84px;
-  border-radius: 12px;               /* soften corners; use 50% for circle */
+  border-radius: 50%;               /* soften corners; use 50% for circle */
   object-fit: cover;
   background: #e5e7eb;               /* placeholder bg */
 }
