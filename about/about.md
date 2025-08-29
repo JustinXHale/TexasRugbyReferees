@@ -19,7 +19,8 @@ management grounded in World Rugby Laws, and help raise the standard of rugby in
 - **Bylaws** — Define membership, elections, and operations (approved 2014).
 - **Texas Rugby Union (TRU)** — TRRA works alongside TRU, which oversees adult rugby in the region.
 - **USA Rugby** — Accreditation, SafeSport, background checks, and Law guidance align with USA Rugby.
-- [View TRRA Bylaws (PDF)](https://texasrugbyunion.com/wp-content/uploads/2014/06/TRRABylaws-WorkingDraft1.pdf){:target="_blank" rel="noopener"}
+
+[View TRRA Bylaws (PDF)](https://texasrugbyunion.com/wp-content/uploads/2014/06/TRRABylaws-WorkingDraft1.pdf){:target="_blank" rel="noopener"}
 
 ## Coverage
 TRRA supports community, collegiate, and club rugby throughout Texas. Assignments span regular
