@@ -1,6 +1,6 @@
 title: Texas Rugby Referees
 description: Assigning • Development • Community
-url: "https://justinxhale.github.io"     # your GitHub Pages domain
-baseurl: "/TexasRugbyReferees"           # repo name with a leading slash
+url: "https://texasrugbyreferees.org"     # your GitHub Pages domain
+baseurl: ""           # repo name with a leading slash
 theme: null
 markdown: kramdown
