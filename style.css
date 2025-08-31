@@ -26,27 +26,43 @@ body{
   line-height:1.6; color:var(--text); background:var(--bg);
 }
 
-/* ===== Header with logo ===== */
+/* ===== Header with logo (logo left, text right) ===== */
 .site-header{
   position:sticky; top:0; z-index:1000;
   background:var(--bg); box-shadow:0 1px 0 rgba(0,0,0,.06);
-  display:flex; align-items:center; justify-content:center;
-  padding:10px var(--pad);
+  display:flex; align-items:center; justify-content:center; /* center the whole group */
   gap:12px;
-}
-.site-logo{
-  height:48px;   /* adjust size here */
-  width:auto;
-}
-.site-title-wrap{
-  display:flex; flex-direction:column; align-items:center;
-}
-.site-title{ margin:0; font-weight:800; color:var(--primary);
-  font-size:clamp(1.3rem,2vw + 1rem,2.2rem);
+  padding:10px var(--pad);
 }
 
-.site-title a{ color:inherit; text-decoration:none }
-.site-subtitle{ margin:2px 0 0; color:var(--muted); font-size:.9rem }
+/* Make room for the fixed hamburger so it doesn't sit on top of the logo */
+@media (max-width: 768px){
+  .site-header{ padding-left: calc(var(--pad) + 44px); }
+}
+
+.site-logo-link{ display:inline-flex; align-items:center; }
+.site-logo{
+  height:48px; width:auto; display:block;
+}
+
+.site-title-wrap{
+  display:flex; flex-direction:column; align-items:flex-start; /* text left-aligned beside logo */
+  line-height:1.2;
+}
+
+.site-title{
+  margin:0; font-weight:800; color:var(--primary);
+  font-size:clamp(1.3rem,2vw + 1rem,2.2rem);
+}
+.site-title a{ color:inherit; text-decoration:none; }
+.site-subtitle{ margin:2px 0 0; color:var(--muted); font-size:.9rem; }
+
+/* Optional: shrink a bit on very small screens */
+@media (max-width: 420px){
+  .site-logo{ height:40px; }
+  .site-title{ font-size:clamp(1.2rem,6vw,1.6rem); }
+}
+
 
 /* ===== Hamburger button ===== */
 .hambutton{
