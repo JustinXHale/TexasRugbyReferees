@@ -1,4 +1,4 @@
-/* ============================================================
+7/* ============================================================
    TRRA Styles — Clean build w/ Compact Drawer (mobile-first)
    ============================================================ */
 
@@ -234,12 +234,12 @@ body > input#nav-toggle:checked ~ label.overlay{ opacity:1; pointer-events:auto;
   }
 }
 
+/* --- Leader bio (always visible, clean look) --- */
 .leader-bio-text {
-  grid-column: 1 / -1;
+  grid-column: 1 / -1;      /* span full width of card */
   margin-top: 8px;
-  padding: 12px;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
+  padding: 0;               /* no extra padding box */
+  color: var(--text);
   line-height: 1.55;
+  font-size: 0.95rem;
 }
