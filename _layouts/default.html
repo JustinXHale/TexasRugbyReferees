@@ -16,16 +16,21 @@
 
   {% include nav.html %}
 
-  <header class="site-header">
+<header class="site-header">
+  <div class="site-header-inner">
     <a href="{{ '/' | relative_url }}" class="site-logo-link">
-      <img src="{{ '/images/trra-logo.svg' | relative_url }}" alt="TRRA Logo" class="site-logo">
+      <img src="{{ '/images/trra-logo.png' | relative_url }}" alt="TRRA Logo" class="site-logo">
     </a>
+
     <div class="site-title-wrap">
-    <h1 class="site-title">
-      <a href="{{ '/' | relative_url }}">Texas Rugby Referees</a>
-    </h1>
-    <p class="site-subtitle">{{ site.description }}</p>
-  </header>
+      <h1 class="site-title">
+        <a href="{{ '/' | relative_url }}">Texas Rugby Referees</a>
+      </h1>
+      <p class="site-subtitle">{{ site.description }}</p>
+    </div>
+  </div>
+</header>
+
 
   <main>
     <!-- Wrap markdown in an auto-card container -->
