@@ -26,41 +26,71 @@ body{
   line-height:1.6; color:var(--text); background:var(--bg);
 }
 
-/* ===== Header with centered logo above title ===== */
-.site-header{
-  position:sticky; top:0; z-index:1000;
-  background:var(--bg); box-shadow:0 1px 0 rgba(0,0,0,.06);
+/* ===== Header with logo & text ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg);
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
 }
 
-.site-header-inner{
-  display:flex; align-items:center; gap:12px;
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding:10px var(--pad);
+  padding: 10px var(--pad);
+  justify-content: center; /* center group horizontally */
+  text-align: center;
 }
 
-/* Logo + text */
-.site-logo{ height:48px; width:auto; display:block }
-.site-title-wrap{ display:flex; flex-direction:column }
-.site-title a{ color:inherit; text-decoration:none }
-
-.site-subtitle{
-  margin:4px 0 0;
-  color:var(--muted);
-  font-size:.95rem;
+.site-logo {
+  height: 48px;
+  width: auto;
+  display: block;
 }
 
-/* Mobile: stack and center */
-@media (max-width: 720px){
-  .site-header-inner{ flex-direction:column; align-items:center; text-align:center }
-  .site-title-wrap{ align-items:center }
+.site-title-wrap {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Desktop: row and left-align */
-@media (min-width: 721px){
-  .site-header-inner{ flex-direction:row; align-items:center }
-  .site-title-wrap{ align-items:flex-start; text-align:left }
+/* Title / subtitle */
+.site-title {
+  margin: 0;
+  font-weight: 800;
+  color: var(--primary);
+  font-size: clamp(1.3rem, 2vw + 1rem, 2.2rem);
 }
+.site-title a { color: inherit; text-decoration: none }
+.site-subtitle {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* --- Responsive tweaks --- */
+@media (max-width: 720px) {
+  .site-header-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (min-width: 721px) {
+  .site-header-inner {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+  .site-title-wrap {
+    align-items: flex-start;
+  }
+}
+
 
 /* ===== Hamburger button ===== */
 .hambutton{
