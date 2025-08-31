@@ -7,10 +7,10 @@
   --bg:#f8fafc; --text:#1e293b; --primary:#0f172a; --muted:#64748b; --accent:#2563eb;
   --maxw:1100px; --pad:16px; --radius:14px;
 
-  /* Drawer tuning (easy to tweak) */
-  --mnu-pad:12px;         /* inner horizontal padding per row */
-  --mnu-gap:6px;          /* gap between sections */
-  --mnu-row:6px;          /* vertical padding inside link rows */
+  /* Drawer tuning */
+  --mnu-pad:12px;
+  --mnu-gap:6px;
+  --mnu-row:6px;
   --mnu-radius:14px;
   --mnu-border:#e5e7eb;
   --mnu-bg:#ffffff;
@@ -38,7 +38,7 @@ body{
 .site-title a{ color:inherit; text-decoration:none }
 .site-subtitle{ margin:4px 0 0; color:var(--muted); font-size:.95rem }
 
-/* ===== Hamburger button (works with #nav-toggle + .hambutton) ===== */
+/* ===== Hamburger button ===== */
 .hambutton{
   position:fixed; left:var(--pad); top:14px; z-index:1100; width:40px; height:34px;
   display:inline-flex; align-items:center; justify-content:center; border-radius:10px;
@@ -65,24 +65,27 @@ body{
   opacity:0; pointer-events:none; transition:opacity .2s; z-index:1050;
 }
 
-/* ===== Drawer (original class targets) ===== */
+/* ===== Drawer (class targets) ===== */
 .drawer{
   position:fixed; inset:0 auto 0 0; width:clamp(260px,80vw,360px); background:#fff;
   border-right:1px solid var(--mnu-border); border-radius:0 var(--mnu-radius) var(--mnu-radius) 0;
   transform:translateX(-100%); transition:transform .25s; z-index:1060;
   height:100vh; display:flex; flex-direction:column; box-shadow:0 10px 30px rgba(0,0,0,.12);
 }
-.drawer .drawer-title{ margin:0 0 25px; padding:10px var(--mnu-pad) 0; font-weight:800; color:var(--primary); text-align:center; }
+.drawer .drawer-title{
+  margin:0 0 25px;              /* pushes first menu down from the X */
+  padding:10px var(--mnu-pad) 0;
+  font-weight:800; color:var(--primary); text-align:center;
+}
 
 /* Scrollable menu content */
 .drawer .accordion{ flex:1; overflow:auto; -webkit-overflow-scrolling:touch; padding:0 var(--mnu-pad) }
 
-/* Section card look (set border: none; to remove outline) */
+/* Section cards */
 .accordion details{
   margin:0 0 var(--mnu-gap); border:1px solid var(--mnu-border);
   border-radius:12px; background:#fff;
 }
-/* Top row — compact */
 .accordion summary{
   list-style:none; cursor:pointer; user-select:none;
   padding:0 var(--mnu-pad);
@@ -92,14 +95,14 @@ body{
 .accordion summary::-webkit-details-marker{ display:none }
 .accordion details[open] > summary{ color:var(--mnu-accent); background:#f8fafc }
 /* Inner links */
-.accordion .links{ padding:4px 0; }
+.accordion .links{ padding:4px 0 }
 .accordion .links a{
   display:block; padding:8px var(--mnu-pad);
   text-decoration:none; color:var(--mnu-fg); border-radius:8px;
 }
 .accordion .links a:hover{ background:#f1f5f9 }
 
-/* Drawer footer (pinned) */
+/* Drawer footer */
 .drawer-footer{
   position:sticky; bottom:0; border-top:1px solid var(--mnu-border);
   background:linear-gradient(180deg,rgba(255,255,255,0) 0,#fff 40%);
@@ -111,23 +114,21 @@ body{
 #nav-toggle:checked ~ .overlay{ opacity:1; pointer-events:auto }
 #nav-toggle:checked ~ .drawer{ transform:translateX(0) }
 
-/* ===== Drawer “rescue” selectors (works even if classes change) ===== */
+/* ===== Drawer “rescue” (attribute targets) ===== */
 nav[aria-label="Sidebar"]{
   position:fixed; inset:0 auto 0 0; width:clamp(260px,80vw,360px); background:#fff;
   border-right:1px solid var(--mnu-border); border-radius:0 var(--mnu-radius) var(--mnu-radius) 0;
   transform:translateX(-100%); transition:transform .25s; z-index:1060;
   height:100vh; display:flex; flex-direction:column; box-shadow:0 10px 30px rgba(0,0,0,.12);
 }
-nav[aria-label="Sidebar"] .drawer-title{ margin:0 0 8px; padding:10px var(--mnu-pad) 0; font-weight:800; color:var(--primary) }
+nav[aria-label="Sidebar"] .drawer-title{ margin:0 0 25px; padding:10px var(--mnu-pad) 0; font-weight:800; color:var(--primary); text-align:center }
 nav[aria-label="Sidebar"] .accordion{ flex:1; overflow:auto; -webkit-overflow-scrolling:touch; padding:0 var(--mnu-pad) }
 nav[aria-label="Sidebar"] details{
-  margin:0 0 var(--mnu-gap); border:1px solid var(--mnu-border);
-  border-radius:12px; background:#fff;
+  margin:0 0 var(--mnu-gap); border:1px solid var(--mnu-border); border-radius:12px; background:#fff;
 }
 nav[aria-label="Sidebar"] summary{
   list-style:none; cursor:pointer; user-select:none; padding:0 var(--mnu-pad);
-  height:44px; display:flex; align-items:center; font-weight:600; color:var(--mnu-muted);
-  border-radius:12px;
+  height:44px; display:flex; align-items:center; font-weight:600; color:var(--mnu-muted); border-radius:12px;
 }
 nav[aria-label="Sidebar"] summary::-webkit-details-marker{ display:none }
 nav[aria-label="Sidebar"] details[open] > summary{ color:var(--mnu-accent); background:#f8fafc }
@@ -142,7 +143,7 @@ nav[aria-label="Sidebar"] .drawer-footer{
 }
 #nav-toggle:checked ~ nav[aria-label="Sidebar"]{ transform:translateX(0) }
 
-/* ===== Main content & site footer ===== */
+/* ===== Main content & footer ===== */
 main{ max-width:var(--maxw); margin:0 auto; padding:24px var(--pad) }
 .card{
   background:#fff; border:1px solid #e5e7eb; border-radius:var(--radius);
@@ -158,7 +159,7 @@ h1,h2,h3{ color:var(--primary); margin:0 0 8px }
 .footer-inner a:hover{ background:rgba(15,23,42,.05); color:var(--primary) }
 .muted{ color:var(--muted) }
 
-/* ===== Markdown auto-cards (one card per section) ===== */
+/* ===== Markdown auto-cards ===== */
 .md-cards > h2, .md-cards > h3{ margin:16px 0 0 }
 .md-cards > h2, .md-cards > h3{
   background:#fff; border:1px solid #e5e7eb; border-radius:var(--radius) var(--radius) 0 0;
@@ -176,63 +177,65 @@ h1,h2,h3{ color:var(--primary); margin:0 0 8px }
 .md-cards ul, .md-cards ol{ padding-left:32px } .md-cards li{ margin:6px 0; line-height:1.5 }
 .md-cards a{ color:#2563eb; text-decoration:underline } .md-cards a:hover{ text-decoration:none }
 
-/* === Hardening patch for drawer === */
+/* === Hardening patch for drawer positioning === */
 body > input#nav-toggle ~ nav.drawer,
 body > input#nav-toggle ~ nav[aria-label="Sidebar"]{
   position:fixed; inset:0 auto 0 0; width:clamp(260px,80vw,360px);
   transform:translateX(-100%); transition:transform .25s; z-index:1060;
 }
 body > input#nav-toggle:checked ~ nav.drawer,
-body > input#nav-toggle:checked ~ nav[aria-label="Sidebar"]{
-  transform:translateX(0);
-}
-body > input#nav-toggle:checked ~ label.overlay{ opacity:1; pointer-events:auto; }
-
+body > input#nav-toggle:checked ~ nav[aria-label="Sidebar"]{ transform:translateX(0) }
+body > input#nav-toggle:checked ~ label.overlay{ opacity:1; pointer-events:auto }
 
 /* ===== Hero banner ===== */
 .hero-banner{ width:100%; margin:0 0 24px }
 .hero-banner img{ width:100%; height:auto; border-radius:0; display:block }
 
 /* ===== Leadership cards ===== */
-.leaders {
-  display: grid;
-  gap: 12px;
+.leaders{ display:grid; gap:12px }
+
+/* Each card stacks content vertically */
+.leader-card{
+  display:flex; flex-direction:column;
+  gap:8px;               /* overall compact vertical rhythm */
+  padding:14px;
 }
 
-/* One card = image left, details right */
-.leader-card {
-  display: flex;
-  flex-direction: column;   /* stack items vertically */
-  gap: 10px;
-  padding: 14px;
+/* Photo */
+.leader-photo{
+  width:84px; height:84px; border-radius:50%;
+  object-fit:cover; background:#e5e7eb; margin-bottom:2px;
 }
 
-.leader-photo {
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: #e5e7eb;
-  margin-bottom: 6px;
+/* Text block (name/role/contacts) */
+.leader-meta{ display:flex; flex-direction:column }
+
+/* Name */
+.leader-meta h3{
+  margin:0;                 /* remove default extra gap */
+  color:var(--primary); font-weight:800; font-size:1.1rem;
 }
 
-.leader-meta {
-  display: flex;
-  flex-direction: column;
+/* Role */
+.leader-role{
+  margin:2px 0 4px;         /* tightened spacing under name */
+  color:var(--muted); font-weight:600; font-size:1rem;
 }
 
-.leader-bio-text {
-  margin-top: 8px;
-  font-size: 0.95rem;
-  color: var(--text);
-  line-height: 1.5;
+/* Email / phone spacing */
+.leader-meta a{
+  display:inline-block;
+  margin:2px 0;             /* keeps the two lines close */
+  color:var(--accent); text-decoration:none;
+}
+.leader-meta a:hover{ text-decoration:underline }
+
+/* Bio */
+.leader-bio-text{
+  margin-top:8px;           /* small separation from contacts */
+  font-size:.95rem; line-height:1.5; color:var(--text);
 }
 
-
-@media (min-width: 720px) {
-  .leaders {
-    grid-template-columns: 1fr 1fr;  /* two cards across on wider screens */
-  }
+@media (min-width:720px){
+  .leaders{ grid-template-columns:1fr 1fr }  /* 2-up on wide screens */
 }
-}
-
