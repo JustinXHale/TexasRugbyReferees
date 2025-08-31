@@ -12,17 +12,10 @@
   {% include nav.html %}
 
   <!-- header (per-page can override or omit) -->
-<header class="site-header">
-  <a href="{{ '/' | relative_url }}" class="site-logo-link">
-    <img src="{{ '/images/trra-logo.png' | relative_url }}" alt="TRRA Logo" class="site-logo">
-  </a>
-  <div class="site-title-wrap">
-    <h1 class="site-title">
-      <a href="{{ '/' | relative_url }}">Texas Rugby Referees</a>
-    </h1>
+  <header class="site-header">
+    <h1 class="site-title">{{ site.title }}</h1>
     <p class="site-subtitle">{{ site.description }}</p>
-  </div>
-</header>
+  </header>
 
   <!-- page content -->
   <main>
