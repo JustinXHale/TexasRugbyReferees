@@ -163,9 +163,3 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur a
 
 </div> <!-- /leaders -->
 
-
----
-
-> If you’re a referee or club looking for your area rep, please use our
-> [Contact Page]({{ '/about/contact.html' | relative_url }}) and we’ll connect you.
-
