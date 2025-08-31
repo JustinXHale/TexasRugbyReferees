@@ -36,8 +36,6 @@ body{
 }
 
 .site-logo{
-   display: block;
-   outline: 1px solid #ccc;
   height:64px;   /* adjust logo size */
   width:auto;
   margin-bottom:6px; /* space between logo and title */
