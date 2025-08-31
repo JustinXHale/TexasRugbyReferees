@@ -201,46 +201,38 @@ body > input#nav-toggle:checked ~ label.overlay{ opacity:1; pointer-events:auto;
 
 /* One card = image left, details right */
 .leader-card {
-  display: grid;
-  grid-template-columns: 84px 1fr;   /* photo | text */
-  align-items: center;
-  gap: 14px;
-  padding: 14px;                     /* uses .card base too */
+  display: flex;
+  flex-direction: column;   /* stack items vertically */
+  gap: 10px;
+  padding: 14px;
 }
 
 .leader-photo {
   width: 84px;
   height: 84px;
-  border-radius: 50%;               /* soften corners; use 50% for circle */
+  border-radius: 50%;
   object-fit: cover;
-  background: #e5e7eb;               /* placeholder bg */
+  background: #e5e7eb;
+  margin-bottom: 6px;
 }
 
-.leader-meta h3 {
-  margin: 0 0 2px;
-  color: var(--primary);
+.leader-meta {
+  display: flex;
+  flex-direction: column;
 }
 
-.leader-role {
-  margin: 0 0 6px;
-  color: var(--muted);
-  font-weight: 600;
-  font-size: 1.25em;
+.leader-bio-text {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
 }
+
 
 @media (min-width: 720px) {
   .leaders {
     grid-template-columns: 1fr 1fr;  /* two cards across on wider screens */
   }
 }
-
-/* --- Leader bio (always visible, clean look) --- */
-.leader-bio-text {
-  grid-column: 1 / -1;      /* span full width of card */
-  margin-top: 8px;
-  padding: 0;               /* no extra padding box */
-  color: var(--text);
-  line-height: 1.55;
-  font-size: 0.95rem;
 }
 
