@@ -17,23 +17,25 @@ Our leadership team ensures referees are supported both on and off the field, he
 <div class="leaders">
 
   <!-- Leader card -->
-  <div class="card leader-card">
-    <img class="leader-photo" src="{{ '/images/placeholder-avatar.png' | relative_url }}" alt="President">
-    <div class="leader-meta">
-      <h3>Ross Davies</h3>
-      <p class="leader-role">Chair</p>
-      <p>
-        <a href="mailto:rpdav1984@gmail.com">rpdav1984@gmail.com</a><br>
-        <a href="tel:+44 7902 436370">+44 7902 436370</a>
-      </p>
-<p class="leader-bio-text">
-  
-The Texas Rugby Referee Association (TRRA) is led by dedicated volunteers who coordinate referee development, assignments, education, and community engagement across Texas.
-
-Our leadership team ensures referees are supported both on and off the field, helping to maintain high standards of officiating and to grow the game.
-</p>
-    </div>
+<div class="card leader-card">
+  <img class="leader-photo" src="{{ '/images/placeholder-avatar.png' | relative_url }}" alt="President">
+  <div class="leader-meta">
+    <h3>Ross Davies</h3>
+    <p class="leader-role">Chair</p>
+    <p>
+      <a href="mailto:rpdav1984@gmail.com">rpdav1984@gmail.com</a><br>
+      <a href="tel:+447902436370">+44 7902 436370</a>
+    </p>
   </div>
+  <p class="leader-bio-text">
+    The Texas Rugby Referee Association (TRRA) is led by dedicated volunteers
+    who coordinate referee development, assignments, education, and community
+    engagement across Texas. Our leadership team ensures referees are supported
+    both on and off the field, helping to maintain high standards of officiating
+    and to grow the game.
+  </p>
+</div>
+
 
   <!-- Leader card -->
   <div class="card leader-card">
