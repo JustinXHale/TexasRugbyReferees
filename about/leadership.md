@@ -28,11 +28,7 @@ Our leadership team ensures referees are supported both on and off the field, he
     </p>
   </div>
   <p class="leader-bio-text">
-    The Texas Rugby Referee Association (TRRA) is led by dedicated volunteers
-    who coordinate referee development, assignments, education, and community
-    engagement across Texas. Our leadership team ensures referees are supported
-    both on and off the field, helping to maintain high standards of officiating
-    and to grow the game.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
   </p>
 </div>
 
@@ -48,6 +44,9 @@ Our leadership team ensures referees are supported both on and off the field, he
         <a href="tel:+1 (214) 533-0248">+1 (214) 533-0248</a>
       </p>
     </div>
+      <p class="leader-bio-text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
+  </p>
   </div>
 
   <!-- Leader card -->
@@ -61,6 +60,9 @@ Our leadership team ensures referees are supported both on and off the field, he
         <a href="tel:+1 (210) 578-7040">+1 (210) 578-7040</a>
       </p>
     </div>
+      <p class="leader-bio-text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
+  </p>
   </div>
 
 </div> <!-- /leaders -->
@@ -82,6 +84,9 @@ Regional reps serve as local contacts for referees and teams. They support match
         <a href="tel:+1 (682) 360-5262">+1 (682) 360-5262</a>
       </p>
     </div>
+      <p class="leader-bio-text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
+  </p>
   </div>
 
     <!-- Leader card -->
@@ -95,6 +100,9 @@ Regional reps serve as local contacts for referees and teams. They support match
         <a href="tel:+1 (910) 261-1708">+1 (910) 261-1708</a>
       </p>
     </div>
+      <p class="leader-bio-text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
+  </p>
   </div>
 
     <!-- Leader card -->
@@ -108,19 +116,22 @@ Regional reps serve as local contacts for referees and teams. They support match
         <a href="tel:+1 (303) 803-7163">+1 (303) 803-7163</a>
       </p>
     </div>
+      <p class="leader-bio-text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
+  </p>
   </div>
 
 </div> <!-- /leaders -->
 
 ---
 
-## Extended Leadership
+## Executive Support
 
 <div class="leaders">
 
   <!-- Leader card -->
   <div class="card leader-card">
-    <img class="leader-photo" src="{{ '/images/placeholder-avatar.png' | relative_url }}" alt="Lonestar Conference Appointer">
+    <img class="leader-photo" src="{{ '/images/placeholder-avatar.png' | relative_url }}" alt="Lonestar Conference Referee Manager">
     <div class="leader-meta">
       <h3>Justin X. Hale</h3>
       <p class="leader-role">Lonestar Conference Appointer</p>
@@ -129,6 +140,9 @@ Regional reps serve as local contacts for referees and teams. They support match
         <a href="tel:+1 (979) 703-0894">+1 (979) 703-0894</a>
       </p>
     </div>
+      <p class="leader-bio-text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
+  </p>
   </div>
 
       <!-- Leader card -->
@@ -142,6 +156,9 @@ Regional reps serve as local contacts for referees and teams. They support match
         <a href="tel:+1 (786) 385-9437">+1 (786) 385-9437</a>
       </p>
     </div>
+      <p class="leader-bio-text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
+  </p>
   </div>
 
 </div> <!-- /leaders -->
