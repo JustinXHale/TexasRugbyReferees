@@ -39,7 +39,7 @@ body{
   justify-content:center;            /* center on mobile */
   text-align:center;
 }
-.site-logo{ height:48px; width:auto; display:block; }
+.site-logo{ height:7em; width:auto; display:block; }
 .site-title-wrap{ display:flex; flex-direction:column; }
 .site-title{ margin:0; font-weight:800; color:var(--primary);
   font-size:clamp(1.3rem,2vw + 1rem,2.2rem);
@@ -53,9 +53,15 @@ body{
 }
 
 /* Left align on desktop */
-@media (min-width:721px){
-  .site-header-inner{ justify-content:flex-start; text-align:left; }
-  .site-title-wrap{ align-items:flex-start; }
+@media (min-width: 721px) {
+  .site-header-inner {
+    flex-direction: row;    /* row layout on desktop */
+    justify-content: center; /* keep the block centered on page */
+    text-align: left;
+  }
+  .site-title-wrap {
+    align-items: flex-start;
+  }
 }
 
 /* ===== Hamburger button ===== */
