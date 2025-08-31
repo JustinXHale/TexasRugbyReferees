@@ -26,6 +26,9 @@ Our leadership team ensures referees are supported both on and off the field, he
         <a href="mailto:rpdav1984@gmail.com">rpdav1984@gmail.com</a><br>
         <a href="tel:+44 7902 436370">+44 7902 436370</a>
       </p>
+<p class="leader-bio-text">
+  Short bio goes here. Highlight experience, roles, and key contributions.
+</p>
     </div>
   </div>
 
