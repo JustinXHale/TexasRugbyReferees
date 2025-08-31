@@ -72,7 +72,7 @@ body{
   transform:translateX(-100%); transition:transform .25s; z-index:1060;
   height:100vh; display:flex; flex-direction:column; box-shadow:0 10px 30px rgba(0,0,0,.12);
 }
-.drawer .drawer-title{ margin:0 0 8px; padding:10px var(--mnu-pad) 0; font-weight:800; color:var(--primary); text-align:center; }
+.drawer .drawer-title{ margin:0 0 25px; padding:10px var(--mnu-pad) 0; font-weight:800; color:var(--primary); text-align:center; }
 
 /* Scrollable menu content */
 .drawer .accordion{ flex:1; overflow:auto; -webkit-overflow-scrolling:touch; padding:0 var(--mnu-pad) }
