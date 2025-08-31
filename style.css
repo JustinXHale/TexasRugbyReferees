@@ -234,3 +234,12 @@ body > input#nav-toggle:checked ~ label.overlay{ opacity:1; pointer-events:auto;
   }
 }
 
+.leader-bio-text {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  line-height: 1.55;
+}
