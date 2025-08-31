@@ -266,17 +266,18 @@ body > input#nav-toggle:checked ~ label.overlay{ opacity:1; pointer-events:auto 
   .leaders{ grid-template-columns:1fr 1fr }  /* 2-up on wide screens */
 }
 
-/* Style for single-link headers in the drawer */
-.single-link {
-  display: block;
-  padding: 0 var(--mnu-pad);
-  height: 44px;
-  line-height: 44px;
-  font-weight: 600;
-  color: var(--mnu-accent);
-  text-decoration: none;
-  border-radius: 12px;
+/* Single-row item (used for Contact) */
+.accordion-item { margin: 0 0 var(--mnu-gap); }
+.accordion-item .accordion-link{
+  display:flex; align-items:center;
+  height:44px; padding:0 var(--mnu-pad);
+  border:1px solid var(--mnu-border);
+  border-radius:12px;
+  background:#fff;
+  font-weight:600;
+  color:var(--mnu-fg);
+  text-decoration:none;
 }
-.single-link:hover {
-  background: #f1f5f9;
+.accordion-item .accordion-link:hover{
+  background:#f1f5f9; color:var(--mnu-accent);
 }
