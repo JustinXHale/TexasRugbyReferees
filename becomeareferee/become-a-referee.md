@@ -15,14 +15,14 @@ To get started, you’ll need to complete one of the following:
 - **Level 1 Referee Course** (full match official, including AR and referee)  
 - **Level 1 Assistant Referee (AR) Course** (online option)  
 
-How to register:  
+### How to register:  
 1. [Login to Rugby Xplorer](https://auth.rugbyxplorer.com.au/login?clientId=portal&codeChallenge=&redirectPath=%2Fdashboard)  
 2. Go to **Learning Center** (left nav).  
 3. Select **Course Catalog**.  
 4. Look for **Level 1 Referee Course** or **Level 1 Assistant Referee Course**.  
 5. Register and complete the course.  
 
-## Step 2: Register with Texas Referees
+### Step 2: Register with Texas Referees
 
 After completing your course:  
 1. Log in to **Rugby Xplorer**.  
