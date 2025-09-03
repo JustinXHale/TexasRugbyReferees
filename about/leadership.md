@@ -101,9 +101,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur a
       </p>
     </div>
       <p class="leader-bio-text">
-Cesar Herrera began his rugby journey in 1991, quickly developing a passion for the sport that would carry through every stage of his life. While serving in the U.S. military, Cesar continued his playing career overseas in Europe and later with the Bragg Rugby Football Club, where he combined his dedication to service with his love for the game.<br>
+Cesar Herrera began his rugby journey in 1991, quickly developing a passion for the sport that would carry through every stage of his life. While serving in the U.S. military, Cesar continued his playing career overseas in Europe and later with the Bragg Rugby Football Club, where he combined his dedication to service with his love for the game.<br><br>
 
-In 2011, Cesar transitioned into refereeing full time with the Southeast Rugby Referee Society, where he honed his craft and became a respected official. His military career then brought him to Texas in 2017, when he was transferred from Fort Bragg, NC, to Fort Sam Houston, TX. There, he continued his service to rugby through the Texas Rugby Referee Association (TRRA).<br>
+In 2011, Cesar transitioned into refereeing full time with the Southeast Rugby Referee Society, where he honed his craft and became a respected official. His military career then brought him to Texas in 2017, when he was transferred from Fort Bragg, NC, to Fort Sam Houston, TX. There, he continued his service to rugby through the Texas Rugby Referee Association (TRRA).<br><br>
 
 Cesar has held multiple leadership positions within  Bragg Rugby and TRRA, including Vice Chair, Central TRRA Representative, and Coach Match Official (CMO). His experience as both a player and referee has made him a well rounded leader and mentor, committed to developing referees and supporting the growth of rugby at every level.  </p>
   </div>
