@@ -134,7 +134,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur a
 
   <!-- Leader card -->
   <div class="card leader-card">
-    <img class="leader-photo" src="{{ '/images/placeholder-avatar.png' | relative_url }}" alt="Lonestar Conference Referee Manager">
+    <img class="leader-photo" src="{{ 'images/leadership/justin-hale' | relative_url }}" alt="Lonestar Conference Referee Manager">
     <div class="leader-meta">
       <h3>Justin X. Hale</h3>
       <p class="leader-role">Lonestar Conference Appointer</p>
@@ -144,8 +144,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur a
       </p>
     </div>
       <p class="leader-bio-text">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
-  </p>
+Justin X. Hale began his rugby journey in 2008 as a high school player in Dallas, Texas, where he quickly developed a lifelong passion for the sport. In 2017, after being recruited by Scott Green, he transitioned into refereeing—initially as a way to earn extra income but soon as a calling that deepened his connection to the game. His officiating career has since taken him through the Lonestar Rugby Referee Society and the Texas Rugby Referee Association (TRRA), with standout assignments including RugbyTown 7s, Club Nationals 7s, and XVs Nationals.<br><br>
+
+Alongside refereeing, Justin has dedicated himself to developing the rugby community through leadership and coaching. He has served as a Rugby Development Officer (RDO), coached men’s rugby with O.R.C., and guided high school athletes with Rock Rugby, shaping the next generation of players with his knowledge and passion. His commitment to mentorship and development reflects his core belief in standing up for what is right and building a positive, resilient rugby culture.<br><br>
+
+Off the field, Justin brings the same creativity and problem-solving mindset to his role as a product designer at Red Hat. Balancing his professional career with his service to rugby, he continues to make a meaningful impact both as a referee and a leader, embodying integrity, passion, and community at every stage of his journey.  </p>
   </div>
 
       <!-- Leader card -->
