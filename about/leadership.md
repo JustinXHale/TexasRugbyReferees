@@ -91,7 +91,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur a
 
     <!-- Leader card -->
   <div class="card leader-card">
-    <img class="leader-photo" src="{{ '/images/placeholder-avatar.png' | relative_url }}" alt="Central Rep">
+    <img class="leader-photo" src="{{ '/images/leadership/cesar-herrera.png' | relative_url }}" alt="Central Rep">
     <div class="leader-meta">
       <h3>Cesar Herrera</h3>
       <p class="leader-role">Central Rep</p>
