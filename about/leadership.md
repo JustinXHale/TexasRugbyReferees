@@ -61,8 +61,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur a
       </p>
     </div>
       <p class="leader-bio-text">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
-  </p>
+Christopher Pugh began playing rugby in the Spring of 2013 at the University of Texas at San Antonio, when he saw a recruiting table in front of the UTSA Sombrilla. They were holding practice that afternoon, he decided to give the sport a try & he never looked back. He played at UTSA for 4 years before graduating in 2016 and transitioning to the senior men’s level and played two seasons with Alamo City Rugby Football Club.<br><br>
+
+Before his final season as a player, Christopher took his L1 course in July 2017 because he knew the writing was on the wall as injuries started piling up but he wasn’t ready to give up this that he loved. Christopher Pugh quickly left his mark across the state, refereeing numerous matches from McAllen to Dallas, and everywhere in between. In 2023, he was selected to the Regional Development Group by USA Rugby. In 2024 he was asked to join the board as the Secretary, to give his opinion on matters as well as take notes for the board during meetings & later took on the role as social media manager.  </p>
   </div>
 
 </div> <!-- /leaders -->
