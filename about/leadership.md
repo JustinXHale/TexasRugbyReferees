@@ -126,8 +126,13 @@ Cesar has held multiple leadership positions within  Bragg Rugby and TRRA, inclu
       </p>
     </div>
       <p class="leader-bio-text">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
-  </p>
+Jonathan “Jono” Cooper has been immersed in rugby from an early age, shaped by his South African parents and their traditions, including watching the Natal Sharks and Springboks. Growing up in Colorado, he translated that passion into playing rugby through high school and later at Baylor University, where he led the Men’s Rugby Team as President of the Club from 2017 to 2019. Even after an injury curtailed his collegiate playing career, Jono refused to step away from the game, instead taking up the whistle in 2016 with the Texas Rugby Referee Association (TRRA) to stay involved and support the sport’s growth.<br><br>
+
+Since then, Jono has become a fixture in American rugby refereeing. He is affiliated with TRRA, the Rocky Mountain Rugby Referees, and the USA Rugby Referees National Development Group, while also serving as an Assistant Referee for Major League Rugby. His leadership extends beyond the pitch: he currently serves as Regional Representative for TRRA’s South Region and is active internationally as a Citing Commissioner with USA Rugby, Rugby Americas North, and World Rugby.<br><br>
+
+On the field, Jono’s career includes assistant refereeing 17 Major League Rugby matches and center refereeing high-profile fixtures such as Army vs. Air Force in Glendale, Colorado, in 2023 and the Gulf Region Super Regionals in 2024 and 2025. Off the field, he has brought his expertise to some of the sport’s biggest stages as Citing Commissioner at the LA SVNS 2024 and the Junior Pan American Games in Paraguay in 2025.<br><br>
+
+Driven by a belief that “rugby is one of the best sports in the world and everyone deserves the best match possible,” Jono approaches every assignment—from youth matches to international competitions—with the same commitment to fairness and excellence. He continues to be a passionate advocate for rugby’s growth in the United States, combining his professional discipline as an attorney with his dedication to supporting referees, players, and the wider rugby community.  </p>
   </div>
 
 </div> <!-- /leaders -->
