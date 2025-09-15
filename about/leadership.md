@@ -28,8 +28,13 @@ Our leadership team ensures referees are supported both on and off the field, he
     </p>
   </div>
   <p class="leader-bio-text">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
-  </p>
+Ross Davies grew up in Newport, Wales, where rugby is woven into everyday life. He picked up the sport at the age of eight, and his early passion carried him all the way to the professional ranks. Over a 15-year playing career, Davies represented clubs across several countries and wore the Welsh jersey up to under-21 level, including a Junior World Cup appearance. Those years instilled both resilience and perspective, shaping a rugby journey marked by both triumphs and challenges.<br><br>
+
+In 2020, after retiring from professional play, Davies turned to refereeing. Motivated by a belief that the game deserved higher standards of officiating, he embraced the role as a way to give back to the sport he loved. Since then, he has refereed numerous high-level men’s and women’s matches, including state finals in Texas and fixtures beyond state borders. His style reflects his personality: a straight shooter with a dry sense of humor, unafraid of tough calls and dedicated to fairness.<br><br>
+
+Alongside his work on the field, Davies has taken on significant leadership roles in the rugby community. As chairman of the Texas Rugby Referee Association (TRRA), he has worked to develop referees across the region, while also serving as a coach at the national level. His experience as a professional player gives him a unique perspective in mentoring others, bridging the worlds of playing and officiating.<br><br>
+
+Through every chapter of his rugby life—whether as a player, referee, coach, or leader—Davies has remained defined by his passion and fire for the game. His journey reflects a commitment not only to personal excellence but also to raising the standard of rugby for the wider community.  </p>
 </div>
 
 
