@@ -91,8 +91,11 @@ Regional reps serve as local contacts for referees and teams. They support match
       </p>
     </div>
       <p class="leader-bio-text">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor consectetur arcu, ac finibus elit rhoncus id. Mauris tincidunt nunc id urna sollicitudin euismod. Curabitur sodales neque orci, vel efficitur elit fringilla sit amet. Nam luctus volutpat magna ac euismod. Phasellus vel semper tortor. Etiam massa sem, iaculis a interdum id, aliquet nec elit. Nullam sodales vel massa id maximus. Proin lorem magna, facilisis sit amet libero in, condimentum vestibulum nibh.
-  </p>
+Jonathan began his rugby journey at age 11 in England, playing prop for a variety of clubs over an 18-year playing career. His time on the field came to a close through injury, but it was at British Airways RFC that he discovered a new passion for the game through refereeing.<br><br>
+
+In 2010, he joined the London Society of Rugby Football Union Referees (LSRFUR), where he developed his skills and built experience across a wide range of matches. After moving to Texas in 2015, Jonathan continued to referee on visits back to England before fully re-establishing himself in the U.S. game.<br><br>
+
+In 2023, he joined the Texas Rugby Referee Association (TRRA), where he now officiates across all levels of the game, from youth fixtures through to senior men’s and women’s Division 2. His long playing background and years of refereeing experience allow him to bring both empathy and authority to the role, helping foster the growth of rugby on both sides of the Atlantic.  </p>
   </div>
 
     <!-- Leader card -->
