@@ -1,4 +1,4 @@
-name: Auto-PR and Merge for Incoming Branches
+name: Auto-PR and Merge for Incoming Branches 
 
 on:
   push:
