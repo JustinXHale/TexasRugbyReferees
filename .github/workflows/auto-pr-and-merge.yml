@@ -14,7 +14,11 @@ jobs:
   open-pr:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Create or update pull request
+        id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -24,9 +28,16 @@ jobs:
             📝 Auto-generated update from ${{ github.ref_name }}
           body: |
             This PR contains new or updated content pushed from Google Forms.
+
+            **Branch:** ${{ github.ref_name }}
+            **Committer:** ${{ github.actor }}
+
             Review and approve to merge into production.
-          labels: automated
+          labels: automated, auto-generated
+          assignees: JustinXHale
           delete-branch: false
+          draft: false
+          branch-suffix: none
 
   auto-merge:
     needs: open-pr
