@@ -1,0 +1,42 @@
+name: Auto-PR and Merge for Incoming Branches
+
+on:
+  push:
+    branches:
+      - incoming-bios
+      - incoming-cmo-report
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create or update pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref_name }}
+          base: main
+          title: |
+            📝 Auto-generated update from ${{ github.ref_name }}
+          body: |
+            This PR contains new or updated content pushed from Google Forms.
+            Review and approve to merge into production.
+          labels: automated
+          delete-branch: false
+
+  auto-merge:
+    needs: open-pr
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Enable auto-merge for approved PRs
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          merge-method: squash
