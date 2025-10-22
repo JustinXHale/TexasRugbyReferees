@@ -25,7 +25,7 @@ jobs:
           branch: ${{ github.ref_name }}
           base: main
           title: |
-            📝 Auto-generated update from ${{ github.ref_name }}
+            🔄 Auto PR from ${{ github.ref_name }}
           body: |
             This PR contains new or updated content pushed from Google Forms.
 
@@ -33,7 +33,9 @@ jobs:
             **Committer:** ${{ github.actor }}
 
             Review and approve to merge into production.
-          labels: automated, auto-generated
+          labels: |
+            automated
+            ${{ github.ref_name }}
           assignees: JustinXHale
           delete-branch: false
           draft: false
