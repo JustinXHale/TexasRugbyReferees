@@ -281,3 +281,93 @@ body > input#nav-toggle:checked ~ label.overlay{ opacity:1; pointer-events:auto 
 .accordion-item .accordion-link:hover{
   background:#f1f5f9; color:var(--mnu-accent);
 }
+
+/* ===== Lonestar Conference page ===== */
+.lonestar-page{ margin:-8px 0 0 }
+
+.lonestar-hero{
+  position:relative; width:100%; margin:0 0 24px; border-radius:var(--radius);
+  overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,.12);
+}
+.lonestar-hero img{
+  width:100%; height:auto; display:block; min-height:200px; object-fit:cover;
+}
+.lonestar-hero-overlay{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:24px var(--pad);
+  background:linear-gradient(180deg, rgba(15,23,42,.55) 0%, rgba(15,23,42,.75) 100%);
+}
+.lonestar-hero-overlay h1{
+  margin:0 0 8px; color:#fff; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800;
+}
+.lonestar-hero-tagline{
+  margin:0 0 20px; color:rgba(255,255,255,.9); font-size:1.1rem; max-width:480px;
+}
+
+.lonestar-cta{
+  display:inline-block; padding:14px 28px;
+  background:var(--accent); color:#fff !important; text-decoration:none !important;
+  font-weight:700; font-size:1.05rem; border-radius:10px;
+  box-shadow:0 2px 8px rgba(37,99,235,.35);
+  transition:background .2s, transform .15s;
+}
+.lonestar-cta:hover{
+  background:#1d4ed8; transform:translateY(-1px); text-decoration:none !important;
+}
+
+.lonestar-intro{
+  margin:0 0 24px; font-size:1.05rem; line-height:1.65;
+}
+.lonestar-intro p{ margin:0 0 12px }
+
+.lonestar-features{
+  display:grid; gap:16px; margin:0 0 28px;
+}
+.lonestar-feature-card h3{
+  margin:0 0 8px; color:var(--primary); font-size:1.15rem;
+}
+.lonestar-feature-card p{ margin:0; color:var(--text); line-height:1.55 }
+
+.lonestar-accent{
+  display:flex; flex-direction:column; align-items:center; gap:16px;
+  margin:0 0 28px; padding:20px;
+  background:#fff; border:1px solid #e5e7eb; border-radius:var(--radius);
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+}
+.lonestar-accent-photo{
+  width:120px; height:120px; border-radius:50%; object-fit:cover;
+  border:3px solid var(--accent);
+}
+.lonestar-accent-text{ text-align:center }
+.lonestar-accent-text h3{ margin:0 0 8px }
+.lonestar-accent-text p{ margin:0 0 10px; line-height:1.55 }
+.lonestar-accent-text a{ color:var(--accent); font-weight:600; text-decoration:none }
+.lonestar-accent-text a:hover{ text-decoration:underline }
+
+.lonestar-callout{
+  margin:0 0 28px; padding:20px 20px 20px 24px;
+  background:#eff6ff; border-left:4px solid var(--accent);
+  border-radius:0 var(--radius) var(--radius) 0;
+}
+.lonestar-callout h3{ margin:0 0 10px; color:var(--primary) }
+.lonestar-callout p{ margin:0 0 10px; line-height:1.55 }
+.lonestar-callout a{
+  display:inline-block; margin-top:4px; color:var(--accent);
+  font-weight:600; text-decoration:none;
+}
+.lonestar-callout a:hover{ text-decoration:underline }
+
+.lonestar-footer-cta{
+  text-align:center; padding:28px 0 8px;
+  border-top:1px solid #e5e7eb;
+}
+.lonestar-footer-cta p{ margin:0 0 16px; font-size:1.1rem; font-weight:600; color:var(--primary) }
+
+@media (min-width:720px){
+  .lonestar-features{ grid-template-columns:1fr 1fr 1fr }
+  .lonestar-accent{
+    flex-direction:row; text-align:left; align-items:flex-start;
+  }
+  .lonestar-accent-text{ text-align:left }
+}

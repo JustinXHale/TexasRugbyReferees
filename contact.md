@@ -14,6 +14,3 @@ permalink: /about/contact.html
 - [info@example.com](mailto:info@example.com)
 
 ---
-
-### Request a Referee
-Use this Google Form: [Match Request Form]({{ site.baseurl }}/forms/request-referee.html){:target="_blank" rel="noopener"}
